@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kouthieye Thiaw — Portfolio GEII</title>
+  <meta name="description" content="Portfolio de Kouthieye Thiaw, étudiant en 3e année de BUT GEII (Électronique et Systèmes Embarqués) à l’IUT de Bordeaux, en recherche d’alternance.">
+  <meta name="theme-color" content="#fcfbf8">
+  <link rel="canonical" href="https://kouthieyethiawportfolio.netlify.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Kouthieye Thiaw — Portfolio">
+  <meta property="og:title" content="Kouthieye Thiaw — Portfolio GEII">
+  <meta property="og:description" content="Étudiant en 3e année de BUT GEII (électronique et systèmes embarqués) à Bordeaux, en recherche d’alternance : projets, compétences, certifications et CV.">
+  <meta property="og:url" content="https://kouthieyethiawportfolio.netlify.app/">
+  <meta property="og:image" content="https://kouthieyethiawportfolio.netlify.app/assets/img/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Kouthieye Thiaw — portfolio, BUT GEII">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23001011'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23fd5321'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js'); if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('intro-on');</script>
+</head>
+<body>
+
+  <!-- Ouverture : mise sous tension d'un oscilloscope -->
+  <div class="intro" aria-hidden="true">
+    <div class="intro__panel intro__panel--top"></div>
+    <div class="intro__panel intro__panel--bot"></div>
+    <canvas class="intro__trace"></canvas>
+    <div class="intro__hud">
+      <span class="intro__tl"><b>(k)thiaw</b> · portfolio 2026</span>
+      <span class="intro__tr"><i></i><span class="intro__status">mise sous tension</span></span>
+      <span class="intro__bl">CH1 · <b class="intro__f">000.000</b> MHz</span>
+      <span class="intro__br">t = <b class="intro__t">0.000</b> s</span>
+      <span class="intro__tag">BUT GEII · électronique &amp; systèmes embarqués · Bordeaux</span>
+    </div>
+    <button type="button" class="intro__skip" tabindex="-1">passer →</button>
+  </div>
+
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="c-dot" aria-hidden="true"><span></span></div>
+  <div class="c-ring" aria-hidden="true"><span></span></div>
+  <div class="c-label" aria-hidden="true"><span></span></div>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <a href="#top" class="nav__logo" aria-label="Kouthieye Thiaw — retour en haut"><span class="p">(</span>k<span class="p">)</span>thiaw</a>
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a href="#profil" data-roll>profil</a>
+      <a href="#projets" data-roll>projets</a>
+      <a href="#competences" data-roll>compétences</a>
+      <a href="#certifications" data-roll>certifications</a>
+      <a href="#parcours" data-roll>parcours</a>
+      <a href="#engagement" data-roll>engagement</a>
+      <a href="#mannequinat" data-roll>mannequinat</a>
+      <a href="#cv" data-roll>cv</a>
+      <span class="nav__ind" aria-hidden="true"></span>
+    </nav>
+    <div class="nav__end">
+      <a href="#contact" class="btn-ember nav__cta" data-magnetic=".25"><span data-roll>me contacter</span></a>
+      <button class="nav__burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span class="burger__t" aria-hidden="true"><span>menu</span><span>fermer</span></span></button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <nav aria-label="Menu mobile">
+      <a href="#profil"><span class="mono">01</span>profil</a>
+      <a href="#projets"><span class="mono">02</span>projets</a>
+      <a href="#competences"><span class="mono">03</span>compétences</a>
+      <a href="#certifications"><span class="mono">04</span>certifications</a>
+      <a href="#parcours"><span class="mono">05</span>parcours</a>
+      <a href="#engagement"><span class="mono">06</span>engagement</a>
+      <a href="#univers"><span class="mono">07</span>univers</a>
+      <a href="#mannequinat"><span class="mono">08</span>mannequinat</a>
+      <a href="#cv"><span class="mono">09</span>cv</a>
+      <a href="#contact"><span class="mono">10</span>contact</a>
+    </nav>
+    <p class="menu__foot mono">thiawkouthieye@gmail.com · +33 7 45 35 58 13</p>
+  </div>
+
+  <main id="top">
+
+    <!-- (00) Hero -->
+    <section class="hero" id="hero">
+      <div class="wrap hero__meta">
+        <span class="mono">(00) portfolio — 2026</span>
+        <span class="hero__badges"><a href="#certifications" class="status status--cert">licence radioamateur · HAREC</a><span class="status"><i></i>en recherche d’alternance</span></span>
+      </div>
+      <h1 class="hero__title wrap" aria-label="Kouthieye Thiaw">
+        <span class="hero__line" aria-hidden="true">Kouthieye</span>
+        <span class="hero__line hero__line--2" aria-hidden="true">Thiaw<span class="hero__dot"></span></span>
+      </h1>
+      <div class="wrap hero__bottom">
+        <p class="hero__lead">Étudiant en 3<sup>e</sup> année de BUT GEII, parcours Électronique et Systèmes Embarqués, à l’IUT de Bordeaux. Je conçois, je mesure et je fiabilise des systèmes électroniques, du schéma KiCad jusqu’au banc de test.</p>
+        <div class="hero__ctas">
+          <a href="#projets" class="pill" data-magnetic=".2">
+            <span class="pill__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>
+            <span data-roll>voir les projets</span>
+          </a>
+          <a href="cv.html" class="ghost" target="_blank" rel="noopener"><span data-roll>le CV en une page</span></a>
+        </div>
+      </div>
+      <div class="scope" aria-hidden="true">
+        <canvas class="scope__canvas"></canvas>
+        <div class="scope__hud wrap mono">
+          <span>CH1 · <b class="scope__amp">1.00</b> V/div</span>
+          <span class="scope__freq">f = 144.000 MHz</span>
+          <span class="scope__run">RUN</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>KiCad</span><i></i><span>STM32</span><i></i><span>VHDL</span><i></i><span>Python</span><i></i><span>SQL</span><i></i><span>RF 144 MHz</span><i></i><span>VNA</span><i></i><span>LTspice</span><i></i><span>Arduino</span><i></i><span>Grafcet</span><i></i><span>Raspberry Pi</span><i></i><span>Quartus</span><i></i>
+      </div>
+    </div>
+
+    <!-- (01) Profil -->
+    <section class="section" id="profil">
+      <div class="wrap">
+        <header class="sh"><span class="sh__l"><span class="sh__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>profil</span><span class="sh__r">(01)</span><span class="sh__line"></span></header>
+
+        <p class="statement" data-scrub-text>Bachelier à Dakar, formé à Rouen puis à Bordeaux. Je conçois des cartes électroniques, je mesure des signaux et je fiabilise des systèmes&nbsp;— de la schématique jusqu’au banc de test.</p>
+
+        <div class="profil__grid">
+          <figure class="portrait" data-img-reveal>
+            <div class="portrait__par" data-parallax><img src="assets/img/portrait.webp" alt="Portrait de Kouthieye Thiaw en noir et blanc" loading="lazy" decoding="async"></div>
+            <figcaption class="mono">Kouthieye Thiaw — Bordeaux</figcaption>
+          </figure>
+
+          <div class="profil__text">
+            <p class="lead" data-reveal>Actuellement en 3<sup>e</sup> année de BUT GEII (parcours ESE) à l’IUT de Bordeaux, je recherche une <strong>alternance</strong> pour ensuite travailler en tant que <strong>technicien en CDI</strong> après mon BUT. Mobile dans toute la France.</p>
+
+            <div class="stats">
+              <div class="stat" data-reveal><span class="stat__v"><span data-count="13">13</span></span><span class="stat__l">projets techniques documentés</span></div>
+              <div class="stat" data-reveal><span class="stat__v"><span data-count="144">144</span><small>MHz</small></span><span class="stat__l">antenne HB9CV construite en SAÉ4</span></div>
+              <div class="stat" data-reveal><span class="stat__v">±<span data-count="18">18</span><small>V</small></span><span class="stat__l">alimentation bas bruit en stage</span></div>
+              <div class="stat" data-reveal><span class="stat__v"><span data-count="3">3</span></span><span class="stat__l">langues · anglais certifié CLES B1</span></div>
+            </div>
+
+            <div class="infos">
+              <div class="info" data-reveal>
+                <h3 class="mono">langues</h3>
+                <ul><li>Wolof <span>maternelle</span></li><li>Français <span>bilingue</span></li><li>Anglais <span>certification CLES B1</span></li></ul>
+              </div>
+              <div class="info" data-reveal>
+                <h3 class="mono">qualités</h3>
+                <ul><li>Créativité</li><li>Capacité d’adaptation</li><li>Compétences relationnelles</li><li>Esprit d’équipe</li><li>Gestion de projet</li></ul>
+              </div>
+              <div class="info" data-reveal>
+                <h3 class="mono">recherche</h3>
+                <ul><li>Alternance <span>BUT 3 GEII</span></li><li>Puis CDI <span>technicien</span></li><li>Mobilité <span>toute la France</span></li></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interlude : circuit qui se route au scroll -->
+    <section class="circuit" aria-hidden="true">
+      <div class="circuit__stage">
+        <svg class="circuit__svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+      <div class="circuit__hud wrap mono"><span>fig. 01 — KT-26 · carte de développement</span><span><span class="circuit__step">substrat</span> · <b class="circuit__pct">000</b> %</span></div>
+    </section>
+
+    <!-- (02) Projets — section sombre -->
+    <section class="section projects" id="projets">
+      <div class="hscroll">
+        <div class="hscroll__track">
+          <div class="hpanel">
+            <header class="sh sh--light"><span class="sh__l"><span class="sh__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>projets</span><span class="sh__r">(02)</span><span class="sh__line"></span></header>
+            <h2 class="h-lg" data-split>Treize projets, du schéma au signal.</h2>
+            <p class="hpanel__p">Électronique de précision, RF, systèmes embarqués, automatisme et données. Une sélection de ce que j’ai conçu, mesuré et livré pendant mon BUT. Cliquez sur un projet pour l’explorer.</p>
+            <p class="hpanel__hint mono"><span class="hpanel__arrow">→</span> faites défiler</p>
+          </div>
+          <!-- cartes injectées par main.js -->
+          <div class="hpanel hpanel--end">
+            <p class="mono">et encore</p>
+            <a href="#index" class="hpanel__more" data-roll>l’index complet ↓</a>
+          </div>
+        </div>
+        <div class="hscroll__hud wrap mono">
+          <span class="hscroll__count">01 / 06</span>
+          <span class="hscroll__bar"><span></span></span>
+          <span>projets phares</span>
+        </div>
+      </div>
+
+      <div class="wrap index" id="index">
+        <div class="index__head">
+          <h3 class="h-md" data-split>Index — tous les projets.</h3>
+          <div class="filters" role="group" aria-label="Filtrer les projets"></div>
+        </div>
+        <ol class="index__list"></ol>
+      </div>
+    </section>
+
+    <div class="hover-preview" aria-hidden="true"><div class="hover-preview__inner"></div></div>
+
+    <div class="marquee marquee--big" aria-hidden="true">
+      <div class="marquee__track">
+        <span>concevoir</span><i></i><span>vérifier</span><i></i><span>maintenir</span><i></i><span>concevoir</span><i></i><span>vérifier</span><i></i><span>maintenir</span><i></i>
+      </div>
+    </div>
+
+    <!-- (03) Compétences -->
+    <section class="section" id="competences">
+      <div class="wrap">
+        <header class="sh"><span class="sh__l"><span class="sh__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>compétences</span><span class="sh__r">(03)</span><span class="sh__line"></span></header>
+        <div class="split-head">
+          <h2 class="h-lg" data-split>Concevoir, vérifier, maintenir.</h2>
+          <p class="lead" data-reveal>Les trois compétences du BUT GEII, et les projets qui les prouvent.</p>
+        </div>
+
+        <div class="offers">
+          <article class="offer" data-spot>
+            <div class="offer__top"><span class="circ"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span><span class="mono">C1</span></div>
+            <h3>Concevoir</h3>
+            <p>Concevoir la partie matérielle et logicielle de systèmes embarqués, de l’étude du besoin jusqu’à la production : schématique, routage PCB, programmation bas niveau.</p>
+            <ul class="offer__links">
+              <li><a href="#projet-sumo" data-open="sumo">Robot Sumo autonome</a></li>
+              <li><a href="#projet-carte" data-open="carte">Carte de signalisation</a></li>
+              <li><a href="#projet-radio" data-open="radio">Antenne HB9CV 144 MHz</a></li>
+            </ul>
+          </article>
+          <article class="offer" data-spot>
+            <div class="offer__top"><span class="circ"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span><span class="mono">C2</span></div>
+            <h3>Vérifier</h3>
+            <p>Mesurer, caractériser et valider des systèmes électroniques avec des instruments de mesure avancés, puis en certifier la conformité.</p>
+            <ul class="offer__links">
+              <li><a href="#projet-vna" data-open="vna">Datasheet RF au VNA</a></li>
+              <li><a href="#projet-exail" data-open="exail">Stage Exail Quantum Systems</a></li>
+              <li><a href="#projet-geo" data-open="geo">Géolocalisation entre cartes</a></li>
+            </ul>
+          </article>
+          <article class="offer" data-spot>
+            <div class="offer__top"><span class="circ"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span><span class="mono">C3</span></div>
+            <h3>Maintenir</h3>
+            <p>Assurer le cycle de vie des systèmes : diagnostic, rétro-ingénierie, dépannage et amélioration continue.</p>
+            <ul class="offer__links">
+              <li><a href="#projet-coffre" data-open="coffre">Coffre-fort : analyse de signal</a></li>
+              <li><a href="#projet-sql" data-open="sql">Northwind : ingénierie inverse</a></li>
+              <li><a href="#projet-auto" data-open="auto">Automatisme &amp; armoires</a></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="skillgrid">
+          <div class="srow" data-reveal><span class="mono">(a)</span><h3>Conception électronique</h3><div class="tags"><span class="tag">Routage PCB</span><span class="tag">Perçage</span><span class="tag">Soudure</span><span class="tag">Câblage</span><span class="tag">Tests</span><span class="tag">Rapport technique</span></div></div>
+          <div class="srow" data-reveal><span class="mono">(b)</span><h3>Programmation</h3><div class="tags"><span class="tag">C</span><span class="tag">C++</span><span class="tag">VHDL</span><span class="tag">Python</span><span class="tag">Assembleur</span><span class="tag">SQL</span><span class="tag">Ladder</span><span class="tag">Grafcet</span></div></div>
+          <div class="srow" data-reveal><span class="mono">(c)</span><h3>CAO &amp; outils</h3><div class="tags"><span class="tag">KiCad</span><span class="tag">Quartus</span><span class="tag">Automgen</span><span class="tag">STM32CubeMX</span><span class="tag">GNU Radio</span></div></div>
+          <div class="srow" data-reveal><span class="mono">(d)</span><h3>Simulation</h3><div class="tags"><span class="tag">PSIM</span><span class="tag">PSpice</span><span class="tag">LTspice</span><span class="tag">ModelSim</span><span class="tag">Atmel Studio</span><span class="tag">Proteus</span><span class="tag">Usimics</span></div></div>
+          <div class="srow" data-reveal><span class="mono">(e)</span><h3>Mesure &amp; RF</h3><div class="tags"><span class="tag">VNA</span><span class="tag">Analyseur de spectre</span><span class="tag">Oscilloscope</span><span class="tag">Multimètre</span><span class="tag">Abaque de Smith</span><span class="tag">SDR</span></div></div>
+          <div class="srow" data-reveal><span class="mono">(f)</span><h3>Électrotechnique</h3><div class="tags"><span class="tag">Schémas électriques industriels</span><span class="tag">Armoires électriques</span><span class="tag">Départs moteurs asynchrones</span><span class="tag">Préhabilitation électrique</span></div></div>
+          <div class="srow" data-reveal><span class="mono">(g)</span><h3>Bases de données</h3><div class="tags"><span class="tag">MySQL / MariaDB</span><span class="tag">phpMyAdmin</span><span class="tag">Jointures &amp; vues</span><span class="tag">mysql.connector</span><span class="tag">Linux / SSH</span></div></div>
+          <div class="srow" data-reveal><span class="mono">(h)</span><h3>Gestion de projet</h3><div class="tags"><span class="tag">Cahier des charges</span><span class="tag">Gantt</span><span class="tag">PERT</span><span class="tag">Travail d’équipe</span></div></div>
+        </div>
+
+        <div class="fab">
+          <div class="fab__text">
+            <span class="mono fab__kicker">en atelier · 2 vidéos</span>
+            <h3 class="h-md" data-split>Concevoir et fabriquer des cartes électroniques.</h3>
+            <p data-reveal>Je ne m’arrête pas au routage : je fabrique mes cartes moi-même, de l’insolation à la gravure, puis je perce, je soude et je valide la carte sous tension.</p>
+            <ol class="fab__steps" data-reveal>
+              <li><span class="mono">01</span>Schématique &amp; simulation</li>
+              <li><span class="mono">02</span>Routage sous KiCad</li>
+              <li class="is-video"><span class="mono">03</span>Insolation &amp; gravure<span class="mono fab__tag">vidéo</span></li>
+              <li><span class="mono">04</span>Perçage &amp; soudure</li>
+              <li class="is-video"><span class="mono">05</span>Test sous tension<span class="mono fab__tag">vidéo</span></li>
+            </ol>
+            <a href="#projet-carte" class="pill" data-open="carte" data-magnetic=".2">
+              <span class="pill__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>
+              <span data-roll>voir la carte de signalisation</span>
+            </a>
+          </div>
+          <div class="fab__reels"><!-- vidéos injectées par main.js --></div>
+        </div>
+
+        <div class="db">
+          <div class="db__text">
+            <span class="badge-new mono">nouveau · BUT 3</span>
+            <h3 class="h-md" data-split>Bases de données : du SQL au script Python.</h3>
+            <p data-reveal>En TP, j’ai administré une base MariaDB sur un serveur Debian, retrouvé par ingénierie inverse le modèle de la base Northwind, écrit des requêtes avec jointures, agrégats et vues, puis développé un menu Python qui interroge la base.</p>
+            <a href="#projet-sql" class="pill" data-open="sql" data-magnetic=".2">
+              <span class="pill__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>
+              <span data-roll>ouvrir le projet</span>
+            </a>
+          </div>
+          <div class="term" data-term>
+            <div class="term__bar"><i></i><i></i><i></i><span class="mono">but@debian — northwind</span><button type="button" class="term__replay mono">rejouer</button></div>
+            <div class="term__body mono" aria-label="Démonstration de requêtes SQL et d’un script Python sur la base Northwind"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- (04) Certifications -->
+    <section class="section certs" id="certifications">
+      <div class="wrap">
+        <header class="sh"><span class="sh__l"><span class="sh__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>certifications</span><span class="sh__r">(04)</span><span class="sh__line"></span></header>
+        <div class="split-head">
+          <h2 class="h-lg" data-split>Licences &amp; certifications.</h2>
+          <p class="lead" data-reveal>Des certifications officielles qui valident ce que je pratique : la radio, les langues et le numérique.</p>
+        </div>
+
+        <article class="cert-hero" data-reveal>
+          <div class="cert-hero__text">
+            <p class="mono cert-hero__kicker"><i></i>à l’honneur · licence radio</p>
+            <h3>Certificat d’opérateur des services d’amateur</h3>
+            <p class="cert-hero__sub">Équivalent <strong>HAREC</strong> (Recommandation CEPT T/R 61-02) : examen réussi conformément au règlement de l’Union internationale des télécommunications.</p>
+            <dl class="cert-hero__meta">
+              <div><dt class="mono">délivré par</dt><dd>ANFR · Agence nationale des fréquences</dd></div>
+              <div><dt class="mono">numéro</dt><dd>n° 37059</dd></div>
+              <div><dt class="mono">date</dt><dd>19 janvier 2026</dd></div>
+              <div><dt class="mono">classe</dt><dd>Équivalent HAREC</dd></div>
+            </dl>
+            <div class="tags"><span class="tag">Télécommunications</span><span class="tag">Radiofréquence (RF)</span><span class="tag">Réglementation radio</span></div>
+            <div class="cert-hero__ctas">
+              <button type="button" class="pill" data-cert-open data-magnetic=".2">
+                <span class="pill__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>
+                <span data-roll>voir le certificat</span>
+              </button>
+              <a href="assets/pdf/certificat-radioamateur-anfr.pdf" class="ghost" download><span data-roll>télécharger le PDF</span></a>
+              <a href="#projet-radio" class="cert-hero__link" data-open="radio" data-roll>projet antenne HB9CV →</a>
+            </div>
+            <figure class="wf" aria-hidden="true">
+              <div class="wf__head mono"><span>SDR · cascade</span><span class="wf__f">144.000 MHz</span></div>
+              <canvas class="wf__spec"></canvas>
+              <canvas class="wf__fall"></canvas>
+              <div class="wf__scale mono"><span>143,5</span><span>144,0</span><span>144,5</span></div>
+            </figure>
+          </div>
+          <div class="cert-doc">
+            <div class="cert-doc__tilt">
+              <button type="button" class="cert-doc__sheet" data-cert-open data-cursor="agrandir" aria-label="Agrandir le certificat ANFR">
+                <img src="assets/img/cert-anfr-sm.webp" alt="Certificat d’opérateur des services d’amateur délivré par l’ANFR à Kouthieye Thiaw (date et lieu de naissance masqués)" loading="lazy" decoding="async">
+              </button>
+            </div>
+            <p class="cert-doc__cap mono"><span>document officiel · ANFR</span><span>date et lieu de naissance masqués</span></p>
+          </div>
+        </article>
+
+        <div class="cert-row">
+          <article class="cert cert--cles" data-reveal>
+            <div class="cert__top mono"><span>mis en avant · langues</span><span>juin 2025</span></div>
+            <div class="cert__big">B1</div>
+            <h3>CLES — Anglais</h3>
+            <p>Certificat de compétences en langues de l’enseignement supérieur, délivré par l’IUT de Rouen : niveau B1 du cadre européen (CECRL).</p>
+            <div class="cefr" role="img" aria-label="Niveau B1 sur l’échelle du CECRL, de A1 à C2"><span>A1</span><span>A2</span><span class="is-me">B1</span><span>B2</span><span>C1</span><span>C2</span></div>
+          </article>
+          <article class="cert cert--pix" data-reveal>
+            <div class="cert__top mono"><span>numérique</span><span>mai 2025</span></div>
+            <div class="cert__big">Pix</div>
+            <h3>Certification Pix</h3>
+            <p>Certification nationale des compétences numériques. Identifiant <span class="mono cert__id">P-THBKVQYR</span></p>
+            <ul class="pix mono"><li>informations &amp; données</li><li>communication &amp; collaboration</li><li>création de contenu</li><li>protection &amp; sécurité</li><li>environnement numérique</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- (05) Parcours -->
+    <section class="section" id="parcours">
+      <div class="wrap">
+        <header class="sh"><span class="sh__l"><span class="sh__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>parcours</span><span class="sh__r">(05)</span><span class="sh__line"></span></header>
+        <h2 class="h-lg" data-split>De Dakar à Bordeaux.</h2>
+
+        <div class="tl-grid">
+          <div class="tl">
+            <h3 class="tl__title mono">formations</h3>
+            <span class="tl__track"><span class="tl__fill"></span></span>
+            <article class="tl-item" data-reveal>
+              <span class="tl-item__date mono">2025 — 2027</span>
+              <h4>BUT GEII, parcours ESE</h4>
+              <p class="tl-item__place">IUT de Bordeaux</p>
+              <p>Électronique et Systèmes Embarqués : RF, microcontrôleurs, informatique industrielle, bases de données.</p>
+            </article>
+            <article class="tl-item" data-reveal>
+              <span class="tl-item__date mono">2024 — 2025</span>
+              <h4>BUT GEII, 1<sup>re</sup> année</h4>
+              <p class="tl-item__place">IUT de Rouen</p>
+              <p>Électronique, électrotechnique et automatisme ; premières SAÉ de conception de cartes et de VHDL.</p>
+            </article>
+            <article class="tl-item" data-reveal>
+              <span class="tl-item__date mono">2022 — 2023</span>
+              <h4>Baccalauréat sciences expérimentales (S2)</h4>
+              <p class="tl-item__place">Lycée Issa Laye, Dakar, Sénégal</p>
+              <p>Mention Bien.</p>
+            </article>
+          </div>
+
+          <div class="tl">
+            <h3 class="tl__title mono">expériences professionnelles</h3>
+            <span class="tl__track"><span class="tl__fill"></span></span>
+            <article class="tl-item" data-reveal>
+              <span class="tl-item__date mono">avril — juin 2026</span>
+              <h4>Stagiaire en électronique</h4>
+              <p class="tl-item__place">Exail Quantum Systems, Gradignan</p>
+              <p>Bancs de tests à partir du secteur 230 V : alimentation bas bruit ±6 V / ±18 V pour des systèmes optiques, synthétiseur de fréquence AOM à base de DDS piloté par une Raspberry Pi.</p>
+              <div class="tags"><span class="tag">Schémas 3D</span><span class="tag">Câble management</span><span class="tag">RF</span><span class="tag">Électronique de précision</span></div>
+              <a href="#projet-exail" class="tl-item__link" data-open="exail" data-roll>voir le projet →</a>
+            </article>
+            <article class="tl-item" data-reveal>
+              <span class="tl-item__date mono">sept. 2025 — en cours</span>
+              <h4>Équipier polyvalent</h4>
+              <p class="tl-item__place">CROUS Bordeaux Aquitaine</p>
+              <p>Rotation entre les postes du restaurant universitaire : plonge, scramble, service, rangement, caisse.</p>
+              <div class="tags"><span class="tag">Gestion du stress</span><span class="tag">Responsabilités</span><span class="tag">Gestion du temps et des conflits</span></div>
+            </article>
+            <article class="tl-item" data-reveal>
+              <span class="tl-item__date mono">déc. 2025 — en cours</span>
+              <h4>Bénévole</h4>
+              <p class="tl-item__place">COP1 Bordeaux</p>
+              <p>Distribution et organisation de la communication au sein de l’association.</p>
+              <div class="tags"><span class="tag">Communication</span><span class="tag">Organisation</span></div>
+              <a href="#engagement" class="tl-item__link" data-roll>voir en images →</a>
+            </article>
+            <article class="tl-item" data-reveal>
+              <span class="tl-item__date mono">juin — août 2025</span>
+              <h4>Commis de cuisine</h4>
+              <p class="tl-item__place">Restaurant La Chaumière, Quettehou</p>
+              <p>Entrées et desserts pendant le service, inventaire des stocks, surveillance de la chaîne du froid.</p>
+              <div class="tags"><span class="tag">Organisation du poste</span><span class="tag">Écoute</span><span class="tag">Adaptabilité</span></div>
+            </article>
+            <article class="tl-item" data-reveal>
+              <span class="tl-item__date mono">2022 — 2023</span>
+              <h4>Caissier saisonnier</h4>
+              <p class="tl-item__place">Auchan, Dakar, Sénégal</p>
+              <p>Tenue de caisse et mise en rayon en période de faible affluence.</p>
+              <div class="tags"><span class="tag">Polyvalence</span><span class="tag">Sens de l’accueil</span><span class="tag">Ouverture</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- (06) Engagement -->
+    <section class="section engage" id="engagement">
+      <div class="wrap">
+        <header class="sh"><span class="sh__l"><span class="sh__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>engagement</span><span class="sh__r">(06)</span><span class="sh__line"></span></header>
+        <div class="engage__head">
+          <h2 class="h-lg" data-split>Du temps pour les autres.</h2>
+          <div class="engage__intro">
+            <p class="lead" data-reveal>Depuis décembre 2025, je suis bénévole chez COP1 – Solidarités Étudiantes, à Bordeaux : des distributions alimentaires gratuites, organisées par et pour les étudiants.</p>
+            <dl class="engage__facts" data-reveal>
+              <div><dt class="mono">association</dt><dd>COP1 Bordeaux</dd></div>
+              <div><dt class="mono">depuis</dt><dd>déc. 2025</dd></div>
+              <div><dt class="mono">rôle</dt><dd>Bénévole</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="cop">
+          <figure class="cop__it cop--1">
+            <button type="button" class="cop__frame" data-cop="0" data-cursor="voir" aria-label="Agrandir la photo 1 sur 5">
+              <span class="cop__in"><img src="assets/img/cop1/cop1-01-sm.webp" alt="Trois bénévoles COP1 en t-shirt blanc, pouces levés, dans la cave où ont lieu les distributions" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption class="mono"><span>01 / 05</span><span>l’équipe du soir</span></figcaption>
+          </figure>
+          <figure class="cop__it cop--2">
+            <button type="button" class="cop__frame" data-cop="1" data-cursor="voir" aria-label="Agrandir la photo 2 sur 5">
+              <span class="cop__in"><img src="assets/img/cop1/cop1-02-sm.webp" alt="Bénévoles COP1 derrière des cagettes de fruits et légumes prêtes pour la distribution" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption class="mono"><span>02 / 05</span><span>les cagettes sont prêtes</span></figcaption>
+          </figure>
+          <figure class="cop__it cop--3">
+            <button type="button" class="cop__frame" data-cop="2" data-cursor="voir" aria-label="Agrandir la photo 3 sur 5">
+              <span class="cop__in"><img src="assets/img/cop1/cop1-03-sm.webp" alt="Trois bénévoles derrière le stand, devant la banderole « solidarité pour les étudiants »" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption class="mono"><span>03 / 05</span><span>derrière le stand</span></figcaption>
+          </figure>
+          <figure class="cop__it cop--4">
+            <button type="button" class="cop__frame" data-cop="3" data-cursor="voir" aria-label="Agrandir la photo 4 sur 5">
+              <span class="cop__in"><img src="assets/img/cop1/cop1-04-sm.webp" alt="Un bénévole sert une étudiante pendant une distribution alimentaire" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption class="mono"><span>04 / 05</span><span>pendant la distribution</span></figcaption>
+          </figure>
+          <figure class="cop__it cop--5">
+            <button type="button" class="cop__frame" data-cop="4" data-cursor="voir" aria-label="Agrandir la photo 5 sur 5">
+              <span class="cop__in"><img src="assets/img/cop1/cop1-05-sm.webp" alt="Deux bénévoles posent avec un t-shirt COP1" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption class="mono"><span>05 / 05</span><span>esprit d’équipe</span></figcaption>
+          </figure>
+          <div class="cop__quote" data-reveal>
+            <span class="mono">volet associatif</span>
+            <p>Par et pour les étudiants.</p>
+            <span class="mono">COP1 – Solidarités Étudiantes</span>
+          </div>
+        </div>
+
+        <ol class="engage__steps">
+          <li data-reveal><span class="mono">01</span><h3>Mise en place</h3><p>Installer les stands et préparer les cagettes de fruits et légumes avant l’ouverture.</p></li>
+          <li data-reveal><span class="mono">02</span><h3>Distribution</h3><p>Accueillir les étudiants et tenir les stands pendant toute la distribution.</p></li>
+          <li data-reveal><span class="mono">03</span><h3>Communication</h3><p>Organiser la communication de l’association pour faire connaître les distributions.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- (07) Univers -->
+    <section class="section univers" id="univers">
+      <div class="wrap">
+        <header class="sh"><span class="sh__l"><span class="sh__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>univers</span><span class="sh__r">(07)</span><span class="sh__line"></span></header>
+        <h2 class="h-lg" data-split>En dehors du labo.</h2>
+        <div class="acc">
+          <figure class="acc__item is-default" tabindex="0">
+            <svg class="ill" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="600" height="800" fill="#001011"/><rect x="40" y="112" width="520" height="72" fill="#031a1b"/><rect x="40" y="256" width="520" height="72" fill="#031a1b"/><rect x="40" y="400" width="520" height="72" fill="#031a1b"/><rect x="40" y="544" width="520" height="72" fill="#031a1b"/><rect x="40" y="688" width="520" height="72" fill="#031a1b"/><g fill="none" stroke="#fcfbf8" stroke-opacity=".8" stroke-width="2.4"><rect x="40" y="40" width="520" height="720"/><line x1="40" y1="400" x2="560" y2="400"/><circle cx="300" cy="400" r="72"/><rect x="160" y="40" width="280" height="132"/><rect x="232" y="40" width="136" height="52"/><path d="M246,172 A70,70 0 0 0 354,172"/><rect x="160" y="628" width="280" height="132"/><rect x="232" y="708" width="136" height="52"/><path d="M246,628 A70,70 0 0 1 354,628"/><rect x="266" y="24" width="68" height="16"/><rect x="266" y="760" width="68" height="16"/><path d="M40,54 A14,14 0 0 0 54,40 M546,40 A14,14 0 0 0 560,54 M40,746 A14,14 0 0 1 54,760 M546,760 A14,14 0 0 1 560,746"/></g><circle cx="300" cy="400" r="3.2" fill="#fcfbf8" fill-opacity=".8"/><circle cx="300" cy="128" r="3.2" fill="#fcfbf8" fill-opacity=".8"/><circle cx="300" cy="672" r="3.2" fill="#fcfbf8" fill-opacity=".8"/><path d="M150,624 C205,575 250,545 300,522 C385,488 430,474 452,430 C478,372 440,296 382,252 C340,220 312,150 300,40" fill="none" stroke="#fcfbf8" stroke-opacity=".38" stroke-width="2" stroke-dasharray="7 9"/><line x1="300" y1="522" x2="360" y2="470" stroke="#fcfbf8" stroke-opacity=".22" stroke-width="2" stroke-dasharray="3 6"/><line x1="452" y1="430" x2="500" y2="360" stroke="#fcfbf8" stroke-opacity=".22" stroke-width="2" stroke-dasharray="3 6"/><line x1="382" y1="252" x2="410" y2="190" stroke="#fcfbf8" stroke-opacity=".22" stroke-width="2" stroke-dasharray="3 6"/><circle cx="360" cy="330" r="13" fill="none" stroke="#fcfbf8" stroke-opacity=".45" stroke-width="2" stroke-dasharray="4 4"/><circle cx="250" cy="238" r="13" fill="none" stroke="#fcfbf8" stroke-opacity=".45" stroke-width="2" stroke-dasharray="4 4"/><circle cx="430" cy="176" r="13" fill="none" stroke="#fcfbf8" stroke-opacity=".45" stroke-width="2" stroke-dasharray="4 4"/><circle cx="318" cy="66" r="13" fill="none" stroke="#fcfbf8" stroke-opacity=".45" stroke-width="2" stroke-dasharray="4 4"/><circle cx="150" cy="624" r="15" fill="#fcfbf8"/><text x="150" y="629" font-family="Geist Mono, ui-monospace, monospace" font-size="14" font-weight="500" text-anchor="middle" fill="#001011">4</text><circle cx="300" cy="522" r="15" fill="#fcfbf8"/><text x="300" y="527" font-family="Geist Mono, ui-monospace, monospace" font-size="14" font-weight="500" text-anchor="middle" fill="#001011">8</text><circle cx="452" cy="430" r="15" fill="#fcfbf8"/><text x="452" y="435" font-family="Geist Mono, ui-monospace, monospace" font-size="14" font-weight="500" text-anchor="middle" fill="#001011">10</text><circle cx="382" cy="252" r="15" fill="#fcfbf8"/><text x="382" y="257" font-family="Geist Mono, ui-monospace, monospace" font-size="14" font-weight="500" text-anchor="middle" fill="#001011">9</text><circle cx="205" cy="330" r="15" fill="#fcfbf8"/><text x="205" y="335" font-family="Geist Mono, ui-monospace, monospace" font-size="14" font-weight="500" text-anchor="middle" fill="#001011">7</text><circle r="8.5" fill="#fd5321"><animateMotion dur="6.5s" repeatCount="indefinite" path="M150,624 C205,575 250,545 300,522 C385,488 430,474 452,430 C478,372 440,296 382,252 C340,220 312,150 300,40" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .35 1"/></circle><text x="40" y="792" font-family="Geist Mono, ui-monospace, monospace" font-size="13" fill="#fcfbf8" fill-opacity=".5">4-3-3 · transition rapide</text></svg>
+            <span class="acc__label"><span class="mono">01</span>Football</span>
+            <figcaption class="acc__cap"><span class="mono">(01)</span><strong>Football</strong><span>Sport d’équipe, discipline et endurance.</span></figcaption>
+          </figure>
+          <figure class="acc__item" tabindex="0">
+            <svg class="ill" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="600" height="800" fill="#ededea"/><g transform="rotate(-7 300 400)"><g><rect x="168" y="-400" width="264" height="1900" fill="#001011"/><rect x="179" y="-400" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-400" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="-370" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-370" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="-340" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-340" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="-310" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-310" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="-280" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-280" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="-250" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-250" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="-220" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-220" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="-190" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-190" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="-160" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-160" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="-130" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-130" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="-100" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-100" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="-70" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-70" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="-40" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-40" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="-10" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="-10" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="20" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="20" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="50" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="50" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="80" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="80" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="110" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="110" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="140" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="140" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="170" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="170" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="200" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="200" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="230" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="230" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="260" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="260" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="290" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="290" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="320" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="320" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="350" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="350" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="380" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="380" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="410" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="410" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="440" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="440" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="470" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="470" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="500" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="500" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="530" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="530" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="560" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="560" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="590" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="590" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="620" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="620" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="650" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="650" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="680" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="680" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="710" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="710" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="740" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="740" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="770" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="770" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="800" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="800" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="830" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="830" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="860" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="860" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="890" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="890" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="920" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="920" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="950" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="950" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="980" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="980" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1010" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1010" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1040" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1040" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1070" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1070" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1100" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1100" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1130" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1130" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1160" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1160" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1190" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1190" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1220" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1220" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1250" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1250" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1280" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1280" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1310" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1310" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1340" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1340" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1370" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1370" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1400" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1400" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1430" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1430" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1460" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1460" width="14" height="18" rx="3" fill="#ededea"/><rect x="179" y="1490" width="14" height="18" rx="3" fill="#ededea"/><rect x="407" y="1490" width="14" height="18" rx="3" fill="#ededea"/><rect x="205" y="-436" width="190" height="122" rx="3" fill="#fcfbf8"/><path d="M205,-314 L263,-388 L297,-346 L333,-400 L395,-314 Z" fill="#001011"/><path d="M333,-400 L317,-376 L333,-382 L347,-372 Z" fill="#fcfbf8"/><rect x="205" y="-286" width="190" height="122" rx="3" fill="#fcfbf8"/><rect x="205" y="-286" width="190" height="122" rx="3" fill="#0f1e1f"/><circle cx="325" cy="-234" r="24" fill="#fcfbf8"/><circle cx="336" cy="-241" r="22" fill="#0f1e1f"/><circle cx="235" cy="-256" r="1.8" fill="#fcfbf8"/><circle cx="265" cy="-206" r="1.8" fill="#fcfbf8"/><circle cx="245" cy="-188" r="1.8" fill="#fcfbf8"/><circle cx="365" cy="-190" r="1.8" fill="#fcfbf8"/><circle cx="285" cy="-264" r="1.8" fill="#fcfbf8"/><rect x="205" y="-136" width="190" height="122" rx="3" fill="#fcfbf8"/><rect x="211" y="-66" width="22" height="52" fill="#001011"/><rect x="237" y="-94" width="22" height="80" fill="#001011"/><rect x="263" y="-52" width="22" height="38" fill="#001011"/><rect x="289" y="-110" width="22" height="96" fill="#001011"/><rect x="315" y="-76" width="22" height="62" fill="#001011"/><rect x="341" y="-58" width="22" height="44" fill="#001011"/><rect x="367" y="-84" width="22" height="70" fill="#001011"/><rect x="297" y="-92" width="5" height="7" fill="#fd5321"/><rect x="205" y="14" width="190" height="122" rx="3" fill="#fcfbf8"/><clipPath id="cs14"><rect x="205" y="14" width="190" height="84"/></clipPath><circle cx="300" cy="98" r="30" fill="#fd5321" clip-path="url(#cs14)"/><line x1="205" y1="98" x2="395" y2="98" stroke="#001011" stroke-width="2"/><line x1="235" y1="110" x2="365" y2="110" stroke="#001011" stroke-opacity=".35" stroke-width="2"/><line x1="253" y1="116" x2="347" y2="116" stroke="#001011" stroke-opacity=".35" stroke-width="2"/><line x1="271" y1="122" x2="329" y2="122" stroke="#001011" stroke-opacity=".35" stroke-width="2"/><line x1="289" y1="128" x2="311" y2="128" stroke="#001011" stroke-opacity=".35" stroke-width="2"/><rect x="205" y="164" width="190" height="122" rx="3" fill="#fcfbf8"/><circle cx="300" cy="210" r="17" fill="#001011"/><path d="M257,286 C263,242 337,242 343,286 Z" fill="#001011"/><rect x="205" y="314" width="190" height="122" rx="3" fill="#fcfbf8"/><path d="M205,436 L263,362 L297,404 L333,350 L395,436 Z" fill="#001011"/><path d="M333,350 L317,374 L333,368 L347,378 Z" fill="#fcfbf8"/><rect x="205" y="464" width="190" height="122" rx="3" fill="#fcfbf8"/><rect x="205" y="464" width="190" height="122" rx="3" fill="#0f1e1f"/><circle cx="325" cy="516" r="24" fill="#fcfbf8"/><circle cx="336" cy="509" r="22" fill="#0f1e1f"/><circle cx="235" cy="494" r="1.8" fill="#fcfbf8"/><circle cx="265" cy="544" r="1.8" fill="#fcfbf8"/><circle cx="245" cy="562" r="1.8" fill="#fcfbf8"/><circle cx="365" cy="560" r="1.8" fill="#fcfbf8"/><circle cx="285" cy="486" r="1.8" fill="#fcfbf8"/><rect x="205" y="614" width="190" height="122" rx="3" fill="#fcfbf8"/><rect x="211" y="684" width="22" height="52" fill="#001011"/><rect x="237" y="656" width="22" height="80" fill="#001011"/><rect x="263" y="698" width="22" height="38" fill="#001011"/><rect x="289" y="640" width="22" height="96" fill="#001011"/><rect x="315" y="674" width="22" height="62" fill="#001011"/><rect x="341" y="692" width="22" height="44" fill="#001011"/><rect x="367" y="666" width="22" height="70" fill="#001011"/><rect x="297" y="658" width="5" height="7" fill="#fd5321"/><rect x="205" y="764" width="190" height="122" rx="3" fill="#fcfbf8"/><clipPath id="cs764"><rect x="205" y="764" width="190" height="84"/></clipPath><circle cx="300" cy="848" r="30" fill="#fd5321" clip-path="url(#cs764)"/><line x1="205" y1="848" x2="395" y2="848" stroke="#001011" stroke-width="2"/><line x1="235" y1="860" x2="365" y2="860" stroke="#001011" stroke-opacity=".35" stroke-width="2"/><line x1="253" y1="866" x2="347" y2="866" stroke="#001011" stroke-opacity=".35" stroke-width="2"/><line x1="271" y1="872" x2="329" y2="872" stroke="#001011" stroke-opacity=".35" stroke-width="2"/><line x1="289" y1="878" x2="311" y2="878" stroke="#001011" stroke-opacity=".35" stroke-width="2"/><rect x="205" y="914" width="190" height="122" rx="3" fill="#fcfbf8"/><circle cx="300" cy="960" r="17" fill="#001011"/><path d="M257,1036 C263,992 337,992 343,1036 Z" fill="#001011"/><rect x="205" y="1064" width="190" height="122" rx="3" fill="#fcfbf8"/><path d="M205,1186 L263,1112 L297,1154 L333,1100 L395,1186 Z" fill="#001011"/><path d="M333,1100 L317,1124 L333,1118 L347,1128 Z" fill="#fcfbf8"/><rect x="205" y="1214" width="190" height="122" rx="3" fill="#fcfbf8"/><rect x="205" y="1214" width="190" height="122" rx="3" fill="#0f1e1f"/><circle cx="325" cy="1266" r="24" fill="#fcfbf8"/><circle cx="336" cy="1259" r="22" fill="#0f1e1f"/><circle cx="235" cy="1244" r="1.8" fill="#fcfbf8"/><circle cx="265" cy="1294" r="1.8" fill="#fcfbf8"/><circle cx="245" cy="1312" r="1.8" fill="#fcfbf8"/><circle cx="365" cy="1310" r="1.8" fill="#fcfbf8"/><circle cx="285" cy="1236" r="1.8" fill="#fcfbf8"/><rect x="205" y="1364" width="190" height="122" rx="3" fill="#fcfbf8"/><rect x="211" y="1434" width="22" height="52" fill="#001011"/><rect x="237" y="1406" width="22" height="80" fill="#001011"/><rect x="263" y="1448" width="22" height="38" fill="#001011"/><rect x="289" y="1390" width="22" height="96" fill="#001011"/><rect x="315" y="1424" width="22" height="62" fill="#001011"/><rect x="341" y="1442" width="22" height="44" fill="#001011"/><rect x="367" y="1416" width="22" height="70" fill="#001011"/><rect x="297" y="1408" width="5" height="7" fill="#fd5321"/><animateTransform attributeName="transform" type="translate" from="0 0" to="0 -750" dur="16s" repeatCount="indefinite"/></g></g><g transform="translate(300 640) rotate(4)"><rect x="-150" y="0" width="300" height="122" rx="6" fill="#001011"/><g font-family="Geist Mono, ui-monospace, monospace" font-size="13" fill="#fcfbf8"><text x="-134" y="30">PROD.</text><text x="-60" y="30">K. THIAW</text><text x="-134" y="64">SCÈNE</text><text x="-60" y="64">05</text><text x="10" y="64">PRISE</text><text x="78" y="64">01</text><text x="-134" y="98">BUT GEII</text><text x="78" y="98">2026</text></g><g stroke="#fcfbf8" stroke-opacity=".25"><line x1="-142" y1="42" x2="142" y2="42"/><line x1="-142" y1="76" x2="142" y2="76"/></g><g><rect x="-150" y="-28" width="300" height="26" rx="3" fill="#fcfbf8"/><path d="M-150,-28 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M-110,-28 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M-70,-28 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M-30,-28 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M10,-28 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M50,-28 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M90,-28 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M130,-28 h22 l-14,26 h-22 Z" fill="#001011"/></g><g><rect x="-150" y="-58" width="300" height="26" rx="3" fill="#fcfbf8"/><path d="M-150,-58 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M-110,-58 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M-70,-58 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M-30,-58 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M10,-58 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M50,-58 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M90,-58 h22 l-14,26 h-22 Z" fill="#001011"/><path d="M130,-58 h22 l-14,26 h-22 Z" fill="#001011"/><animateTransform attributeName="transform" type="rotate" values="-20 -150 -32;-20 -150 -32;0 -150 -32;0 -150 -32" keyTimes="0;.55;.62;1" dur="3.4s" repeatCount="indefinite"/></g></g></svg>
+            <span class="acc__label"><span class="mono">02</span>Cinéma</span>
+            <figcaption class="acc__cap"><span class="mono">(02)</span><strong>Cinéma</strong><span>Récits immersifs et veille technologique.</span></figcaption>
+          </figure>
+          <figure class="acc__item" tabindex="0">
+            <svg class="ill" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="600" height="800" fill="#fd5321"/><text x="120" y="470" font-family="Geist, Inter, sans-serif" font-size="28" font-weight="500" fill="#001011" opacity="0">a<animate attributeName="y" values="470;120" dur="7.0s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.85;0" keyTimes="0;.3;1" dur="7.0s" begin="0.0s" repeatCount="indefinite"/></text><text x="161" y="470" font-family="Geist, Inter, sans-serif" font-size="38" font-weight="500" fill="#001011" opacity="0">Ω<animate attributeName="y" values="470;120" dur="8.3s" begin="0.9s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.85;0" keyTimes="0;.3;1" dur="8.3s" begin="0.9s" repeatCount="indefinite"/></text><text x="202" y="470" font-family="Geist, Inter, sans-serif" font-size="48" font-weight="500" fill="#001011" opacity="0">§<animate attributeName="y" values="470;120" dur="9.6s" begin="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.85;0" keyTimes="0;.3;1" dur="9.6s" begin="1.8s" repeatCount="indefinite"/></text><text x="243" y="470" font-family="Geist, Inter, sans-serif" font-size="28" font-weight="500" fill="#001011" opacity="0">∑<animate attributeName="y" values="470;120" dur="10.9s" begin="2.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.85;0" keyTimes="0;.3;1" dur="10.9s" begin="2.7s" repeatCount="indefinite"/></text><text x="284" y="470" font-family="Geist, Inter, sans-serif" font-size="38" font-weight="500" fill="#001011" opacity="0">?<animate attributeName="y" values="470;120" dur="7.0s" begin="3.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.85;0" keyTimes="0;.3;1" dur="7.0s" begin="3.6s" repeatCount="indefinite"/></text><text x="325" y="470" font-family="Geist, Inter, sans-serif" font-size="48" font-weight="500" fill="#001011" opacity="0">¶<animate attributeName="y" values="470;120" dur="8.3s" begin="4.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.85;0" keyTimes="0;.3;1" dur="8.3s" begin="4.5s" repeatCount="indefinite"/></text><text x="366" y="470" font-family="Geist, Inter, sans-serif" font-size="28" font-weight="500" fill="#001011" opacity="0">é<animate attributeName="y" values="470;120" dur="9.6s" begin="5.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.85;0" keyTimes="0;.3;1" dur="9.6s" begin="5.4s" repeatCount="indefinite"/></text><text x="407" y="470" font-family="Geist, Inter, sans-serif" font-size="38" font-weight="500" fill="#001011" opacity="0">λ<animate attributeName="y" values="470;120" dur="10.9s" begin="6.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.85;0" keyTimes="0;.3;1" dur="10.9s" begin="6.3s" repeatCount="indefinite"/></text><text x="448" y="470" font-family="Geist, Inter, sans-serif" font-size="48" font-weight="500" fill="#001011" opacity="0">“<animate attributeName="y" values="470;120" dur="7.0s" begin="7.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.85;0" keyTimes="0;.3;1" dur="7.0s" begin="7.2s" repeatCount="indefinite"/></text><text x="129" y="470" font-family="Geist, Inter, sans-serif" font-size="28" font-weight="500" fill="#001011" opacity="0">R<animate attributeName="y" values="470;120" dur="8.3s" begin="8.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.85;0" keyTimes="0;.3;1" dur="8.3s" begin="8.1s" repeatCount="indefinite"/></text><path d="M300,566 C246,548 150,546 70,566 L70,322 L82,318 L82,556 C160,538 246,540 300,556 C354,540 440,538 518,556 L518,318 L530,322 L530,566 C450,546 354,548 300,566 Z" fill="#001011"/><path d="M300,546 C246,528 160,526 86,546 L86,312 C160,292 246,294 300,316 Z" fill="#fcfbf8" stroke="#001011" stroke-width="2.5"/><path d="M300,546 C354,528 440,526 514,546 L514,312 C440,292 354,294 300,316 Z" fill="#fcfbf8" stroke="#001011" stroke-width="2.5"/><path d="M110,340 C170,328 240,330 280,344" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M320,344 C360,330 430,328 490,340" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M110,358 C170,346 240,348 280,362" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M320,362 C360,348 430,346 490,358" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M110,376 C170,364 240,366 280,380" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M320,380 C360,366 430,364 490,376" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M110,394 C170,382 240,384 280,398" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M320,398 C360,384 430,382 490,394" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M110,412 C170,400 240,402 280,416" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M110,430 C170,418 240,420 280,434" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M320,434 C360,420 430,418 490,430" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M110,448 C170,436 240,438 280,452" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M320,452 C360,438 430,436 490,448" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M110,466 C170,454 240,456 280,470" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M320,470 C360,456 430,454 490,466" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M110,484 C170,472 240,474 280,488" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M320,488 C360,474 430,472 490,484" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M110,502 C170,490 240,492 280,506" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><path d="M320,506 C360,492 430,490 490,502" fill="none" stroke="#001011" stroke-opacity=".28" stroke-width="2.2"/><g transform="translate(300 0)"><g><path d="M0,546 C54,528 140,526 214,546 L214,312 C140,292 54,294 0,316 Z" fill="#fcfbf8" stroke="#001011" stroke-width="2.5"/><animateTransform attributeName="transform" type="scale" values="1 1;1 1;-1 1;-1 1" keyTimes="0;.45;.75;1" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;1;0" keyTimes="0;.74;.75;1" dur="5s" repeatCount="indefinite"/></g></g><path d="M312,300 L338,300 L338,640 L325,626 L312,640 Z" fill="#001011"/><text x="300" y="712" font-family="Geist Mono, ui-monospace, monospace" font-size="14" text-anchor="middle" fill="#001011" fill-opacity=".7">essais contemporains · science-fiction</text></svg>
+            <span class="acc__label"><span class="mono">03</span>Lecture</span>
+            <figcaption class="acc__cap"><span class="mono">(03)</span><strong>Lecture</strong><span>Essais contemporains et science-fiction.</span></figcaption>
+          </figure>
+          <figure class="acc__item" tabindex="0">
+            <svg class="ill" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="600" height="800" fill="#fcfbf8"/><defs><pattern id="u4-tone" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1.7" fill="#001011"/></pattern><pattern id="u4-tone2" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.1" fill="#001011"/></pattern><clipPath id="u4-pA"><path d="M36,36 H564 V238 L36,286 Z"/></clipPath><clipPath id="u4-pB"><path d="M36,312 L240,294 L196,764 H36 Z"/></clipPath><clipPath id="u4-pC"><path d="M266,292 L564,266 V764 H222 Z"/></clipPath></defs><g clip-path="url(#u4-pA)"><rect width="600" height="300" fill="url(#u4-tone)" opacity=".55"/><circle cx="452" cy="132" r="64" fill="#fd5321"/><text x="70" y="196" font-family="Geist, Inter, sans-serif" font-size="132" font-weight="800" fill="#001011" transform="skewX(-12)" letter-spacing="-6">!!</text><text x="226" y="168" font-family="Geist, Inter, sans-serif" font-size="58" font-weight="800" fill="#fcfbf8" stroke="#001011" stroke-width="5" paint-order="stroke" transform="rotate(-8 300 150)">DON</text></g><g clip-path="url(#u4-pB)"><rect width="600" height="800" fill="url(#u4-tone2)" opacity=".35"/><line x1="20" y1="390" x2="260" y2="330" stroke="#001011" stroke-width="2" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.2s" repeatCount="indefinite"/></line><line x1="20" y1="418" x2="260" y2="358" stroke="#001011" stroke-width="4" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.4s" repeatCount="indefinite"/></line><line x1="20" y1="446" x2="260" y2="386" stroke="#001011" stroke-width="6" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.6s" repeatCount="indefinite"/></line><line x1="20" y1="474" x2="260" y2="414" stroke="#001011" stroke-width="2" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.8s" repeatCount="indefinite"/></line><line x1="20" y1="502" x2="260" y2="442" stroke="#001011" stroke-width="4" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.2s" repeatCount="indefinite"/></line><line x1="20" y1="530" x2="260" y2="470" stroke="#001011" stroke-width="6" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.4s" repeatCount="indefinite"/></line><line x1="20" y1="558" x2="260" y2="498" stroke="#001011" stroke-width="2" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.6s" repeatCount="indefinite"/></line><line x1="20" y1="586" x2="260" y2="526" stroke="#001011" stroke-width="4" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.8s" repeatCount="indefinite"/></line><line x1="20" y1="614" x2="260" y2="554" stroke="#001011" stroke-width="6" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.2s" repeatCount="indefinite"/></line><line x1="20" y1="642" x2="260" y2="582" stroke="#001011" stroke-width="2" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.4s" repeatCount="indefinite"/></line><line x1="20" y1="670" x2="260" y2="610" stroke="#001011" stroke-width="4" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.6s" repeatCount="indefinite"/></line><line x1="20" y1="698" x2="260" y2="638" stroke="#001011" stroke-width="6" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.8s" repeatCount="indefinite"/></line><line x1="20" y1="726" x2="260" y2="666" stroke="#001011" stroke-width="2" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.2s" repeatCount="indefinite"/></line><line x1="20" y1="754" x2="260" y2="694" stroke="#001011" stroke-width="4" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.4s" repeatCount="indefinite"/></line><line x1="20" y1="782" x2="260" y2="722" stroke="#001011" stroke-width="6" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.6s" repeatCount="indefinite"/></line><line x1="20" y1="810" x2="260" y2="750" stroke="#001011" stroke-width="2" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-260" dur="1.8s" repeatCount="indefinite"/></line></g><g clip-path="url(#u4-pB)"><g stroke-dasharray="120 140"></g></g><g clip-path="url(#u4-pC)"><g stroke="#001011" stroke-linecap="round"><line x1="549.4" y1="536.8" x2="916.8" y2="578.0" stroke-width="2.2"/><line x1="546.7" y1="561.6" x2="900.3" y2="661.8" stroke-width="1.9"/><line x1="549.4" y1="588.2" x2="873.0" y2="735.9" stroke-width="1.3"/><line x1="538.3" y1="624.0" x2="815.6" y2="832.5" stroke-width="2.8"/><line x1="519.4" y1="648.3" x2="754.2" y2="900.7" stroke-width="1.2"/><line x1="486.7" y1="656.8" x2="678.4" y2="959.2" stroke-width="3.1"/><line x1="459.6" y1="659.2" x2="604.6" y2="998.1" stroke-width="2.0"/><line x1="445.2" y1="699.1" x2="527.2" y2="1024.2" stroke-width="3.1"/><line x1="406.4" y1="670.9" x2="422.1" y2="1039.5" stroke-width="1.2"/><line x1="375.9" y1="706.8" x2="333.3" y2="1035.7" stroke-width="1.2"/><line x1="348.7" y1="664.4" x2="225.8" y2="1009.9" stroke-width="2.3"/><line x1="295.1" y1="701.8" x2="140.1" y2="970.4" stroke-width="1.3"/><line x1="304.1" y1="638.7" x2="73.1" y2="924.4" stroke-width="1.9"/><line x1="274.2" y1="635.6" x2="17.0" y2="871.7" stroke-width="3.1"/><line x1="239.0" y1="610.0" x2="-54.0" y2="773.6" stroke-width="1.0"/><line x1="235.7" y1="584.9" x2="-83.6" y2="711.1" stroke-width="1.8"/><line x1="250.5" y1="544.5" x2="-113.2" y2="604.1" stroke-width="2.9"/><line x1="205.8" y1="522.9" x2="-119.9" y2="527.9" stroke-width="2.0"/><line x1="201.4" y1="485.5" x2="-112.3" y2="431.1" stroke-width="1.9"/><line x1="256.0" y1="468.3" x2="-89.4" y2="344.3" stroke-width="3.3"/><line x1="271.1" y1="441.9" x2="-44.7" y2="250.4" stroke-width="1.1"/><line x1="274.2" y1="403.7" x2="18.1" y2="167.0" stroke-width="1.3"/><line x1="280.9" y1="369.7" x2="77.2" y2="112.4" stroke-width="1.2"/><line x1="302.4" y1="341.7" x2="150.4" y2="63.8" stroke-width="1.4"/><line x1="351.8" y1="371.7" x2="239.1" y2="25.5" stroke-width="1.1"/><line x1="368.7" y1="325.7" x2="317.4" y2="6.6" stroke-width="1.5"/><line x1="408.4" y1="346.9" x2="425.2" y2="0.6" stroke-width="1.4"/><line x1="437.7" y1="373.0" x2="529.1" y2="16.3" stroke-width="3.4"/><line x1="480.8" y1="332.1" x2="605.4" y2="42.3" stroke-width="1.2"/><line x1="508.6" y1="360.2" x2="692.3" y2="89.9" stroke-width="1.2"/><line x1="506.8" y1="410.2" x2="762.4" y2="147.1" stroke-width="2.4"/><line x1="558.9" y1="409.2" x2="826.5" y2="222.6" stroke-width="2.5"/><line x1="572.4" y1="438.4" x2="870.0" y2="297.6" stroke-width="2.0"/><line x1="547.5" y1="476.2" x2="898.5" y2="372.1" stroke-width="1.9"/><line x1="569.6" y1="507.6" x2="918.6" y2="482.0" stroke-width="2.9"/><animate attributeName="opacity" values="1;.25;1" dur=".9s" repeatCount="indefinite"/></g><g stroke="#001011" stroke-linecap="round"><line x1="572.4" y1="519.6" x2="920.0" y2="518.8" stroke-width="1.3"/><line x1="551.7" y1="551.3" x2="909.3" y2="625.0" stroke-width="2.3"/><line x1="565.1" y1="584.3" x2="884.6" y2="708.6" stroke-width="2.7"/><line x1="576.3" y1="625.4" x2="846.3" y2="786.9" stroke-width="2.4"/><line x1="528.7" y1="627.1" x2="799.7" y2="852.7" stroke-width="2.6"/><line x1="503.1" y1="645.7" x2="729.9" y2="922.0" stroke-width="1.7"/><line x1="469.5" y1="656.6" x2="635.9" y2="983.4" stroke-width="1.9"/><line x1="444.8" y1="670.2" x2="548.6" y2="1018.3" stroke-width="2.4"/><line x1="422.9" y1="668.7" x2="479.0" y2="1034.0" stroke-width="1.2"/><line x1="390.8" y1="725.1" x2="376.8" y2="1039.5" stroke-width="2.0"/><line x1="363.6" y1="676.2" x2="281.9" y2="1026.4" stroke-width="2.5"/><line x1="336.6" y1="665.8" x2="192.6" y2="996.8" stroke-width="1.6"/><line x1="283.8" y1="691.4" x2="108.2" y2="950.4" stroke-width="1.6"/><line x1="270.5" y1="652.7" x2="36.7" y2="892.1" stroke-width="2.9"/><line x1="256.2" y1="623.4" x2="-22.2" y2="823.5" stroke-width="2.0"/><line x1="245.8" y1="590.9" x2="-72.5" y2="737.2" stroke-width="2.0"/><line x1="220.3" y1="574.4" x2="-97.7" y2="670.7" stroke-width="1.2"/><line x1="220.6" y1="532.8" x2="-118.7" y2="557.0" stroke-width="2.7"/><line x1="192.7" y1="504.7" x2="-118.6" y2="481.8" stroke-width="2.0"/><line x1="245.9" y1="475.8" x2="-99.8" y2="376.6" stroke-width="3.0"/><line x1="212.0" y1="434.0" x2="-72.8" y2="303.6" stroke-width="3.4"/><line x1="258.0" y1="420.6" x2="-26.0" y2="221.8" stroke-width="2.5"/><line x1="291.1" y1="405.2" x2="42.0" y2="142.8" stroke-width="1.2"/><line x1="293.6" y1="359.9" x2="112.3" y2="86.9" stroke-width="2.8"/><line x1="325.2" y1="338.5" x2="201.8" y2="39.2" stroke-width="3.1"/><line x1="364.6" y1="363.6" x2="285.2" y2="12.8" stroke-width="2.5"/><line x1="388.1" y1="359.9" x2="361.5" y2="1.4" stroke-width="2.1"/><line x1="427.5" y1="315.1" x2="469.2" y2="4.6" stroke-width="2.3"/><line x1="460.5" y1="347.6" x2="572.2" y2="29.3" stroke-width="2.3"/><line x1="487.9" y1="360.0" x2="650.3" y2="64.2" stroke-width="1.7"/><line x1="512.1" y1="382.8" x2="729.1" y2="117.4" stroke-width="2.2"/><line x1="551.6" y1="385.5" x2="789.0" y2="174.9" stroke-width="1.6"/><line x1="532.3" y1="444.9" x2="852.3" y2="263.4" stroke-width="2.4"/><line x1="549.5" y1="459.4" x2="882.0" y2="324.8" stroke-width="2.5"/><line x1="579.1" y1="487.2" x2="911.5" y2="426.2" stroke-width="1.1"/><animate attributeName="opacity" values=".25;1;.25" dur=".9s" repeatCount="indefinite"/></g><g transform="translate(400 520)"><ellipse rx="128" ry="74" fill="#fcfbf8"/><g><circle r="56" fill="#001011"/><circle r="56" fill="none" stroke="#fd5321" stroke-width="9"/><circle r="22" fill="#001011"/><circle cx="-20" cy="-22" r="13" fill="#fcfbf8"/><circle cx="18" cy="16" r="5" fill="#fcfbf8"/><animateTransform attributeName="transform" type="translate" values="0 0;0 0;14 -4;14 -4;-10 2;-10 2;0 0" keyTimes="0;.2;.28;.5;.58;.85;1" dur="6s" repeatCount="indefinite"/></g><path d="M-150,6 C-110,-78 100,-96 150,-14" fill="none" stroke="#001011" stroke-width="12" stroke-linecap="round"/><path d="M-128,22 C-70,78 80,84 132,18" fill="none" stroke="#001011" stroke-width="4" stroke-linecap="round"/><line x1="-110" y1="-70" x2="-120" y2="-96" stroke="#001011" stroke-width="5" stroke-linecap="round"/><line x1="-66" y1="-74" x2="-76" y2="-102" stroke="#001011" stroke-width="5" stroke-linecap="round"/><line x1="-22" y1="-78" x2="-32" y2="-108" stroke="#001011" stroke-width="5" stroke-linecap="round"/><line x1="22" y1="-70" x2="12" y2="-96" stroke="#001011" stroke-width="5" stroke-linecap="round"/><line x1="66" y1="-74" x2="56" y2="-102" stroke="#001011" stroke-width="5" stroke-linecap="round"/><line x1="110" y1="-78" x2="100" y2="-108" stroke="#001011" stroke-width="5" stroke-linecap="round"/><path d="M-140,-112 C-60,-150 70,-150 140,-104" fill="none" stroke="#001011" stroke-width="9" stroke-linecap="round"/><path d="M-160,-150 H160 V0 H-160 Z" fill="#fcfbf8" transform="scale(1 0)"><animateTransform attributeName="transform" type="scale" values="1 0;1 0;1 1.05;1 0;1 0" keyTimes="0;.9;.94;.98;1" dur="5s" repeatCount="indefinite"/></path></g></g><g fill="none" stroke="#001011" stroke-width="6" stroke-linejoin="round"><path d="M36,36 H564 V238 L36,286 Z"/><path d="M36,312 L240,294 L196,764 H36 Z"/><path d="M266,292 L564,266 V764 H222 Z"/></g></svg>
+            <span class="acc__label"><span class="mono">04</span>Manga</span>
+            <figcaption class="acc__cap"><span class="mono">(04)</span><strong>Manga</strong><span>La dimension épique et stratégique des œuvres shōnen.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- (08) Mannequinat -->
+    <section class="section mq" id="mannequinat">
+      <div class="wrap">
+        <header class="sh"><span class="sh__l"><span class="sh__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>mannequinat</span><span class="sh__r">(08)</span><span class="sh__line"></span></header>
+        <div class="mq__head">
+          <h2 class="h-lg" data-split>Hors du labo, devant l’objectif.</h2>
+          <div class="mq__intro">
+            <p class="lead" data-reveal>Le mannequinat est l’autre facette de ma personnalité : une façon de m’exprimer par la posture, le regard et le style.</p>
+            <nav class="mq__toc" aria-label="Chapitres du mannequinat" data-reveal>
+              <a href="#mq-edito"><span class="mono">01</span>Éditorial<span class="mono">6 photos</span></a>
+              <a href="#mq-film"><span class="mono">02</span>Film<span class="mono">10 s</span></a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="chap" id="mq-edito">
+          <div class="chap__head" data-reveal><span class="mono">chapitre 01</span><h3>Éditorial</h3><span class="mono">noir &amp; blanc · mai 2026</span></div>
+          <div class="edito"></div>
+        </div>
+
+        <div class="chap" id="mq-film">
+          <div class="chap__head" data-reveal><span class="mono">chapitre 02</span><h3>Film</h3><span class="mono">10 s · animé avec Gemini à partir de la série</span></div>
+        </div>
+      </div>
+      <div class="film-stage">
+        <figure class="film">
+          <video class="film__video" src="assets/video/film-mannequinat.mp4" poster="assets/video/film-poster.webp" muted loop playsinline preload="metadata"></video>
+          <figcaption class="film__ui">
+            <button type="button" class="film__btn" data-film-toggle aria-label="Lire ou mettre en pause le film"><span class="film__icon" aria-hidden="true"></span><span class="mono film__state">lecture</span></button>
+            <span class="film__bar" aria-hidden="true"><span></span></span>
+            <button type="button" class="film__btn" data-film-sound aria-label="Activer ou couper le son"><span class="mono film__sound">son coupé</span></button>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- (09) CV -->
+    <section class="section cvsec" id="cv">
+      <div class="wrap">
+        <header class="sh"><span class="sh__l"><span class="sh__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>cv</span><span class="sh__r">(09)</span><span class="sh__line"></span></header>
+        <div class="cvsec__grid">
+          <div class="cvsec__text">
+            <h2 class="h-lg" data-split>Le CV, en une page.</h2>
+            <p class="lead" data-reveal>La version imprimable de ce portfolio : formations, projets de SAÉ, stage chez Exail et, nouveauté de BUT 3, les bases de données (SQL &amp; Python).</p>
+            <div class="cvsec__ctas" data-reveal>
+              <a href="Kouthieye_Thiaw_CV.pdf" class="btn-ember btn-ember--lg" download data-magnetic=".25"><span data-roll>télécharger le PDF</span></a>
+              <a href="cv.html" class="pill" target="_blank" rel="noopener" data-magnetic=".2">
+                <span class="pill__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>
+                <span data-roll>version web</span>
+              </a>
+            </div>
+          </div>
+          <div class="cvsec__sheet">
+            <div class="sheet-tilt">
+              <a class="sheet" href="cv.html" target="_blank" rel="noopener" data-cursor="ouvrir" aria-label="Ouvrir le CV dans un nouvel onglet">
+                <iframe src="cv.html" title="Aperçu du CV" loading="lazy" tabindex="-1"></iframe>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- (10) Contact -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <header class="sh"><span class="sh__l"><span class="sh__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></span>contact</span><span class="sh__r">(10)</span><span class="sh__line"></span></header>
+        <h2 class="contact__big" aria-label="Travaillons ensemble."><span class="contact__line">Travaillons</span><span class="contact__line">ensemble<span class="ember-dot">.</span></span></h2>
+        <div class="contact__grid">
+          <div>
+            <p class="lead" data-reveal>Une alternance en électronique, en systèmes embarqués ou en RF ? Je suis mobile dans toute la France et disponible pour en parler.</p>
+            <div data-reveal><a href="mailto:thiawkouthieye@gmail.com" class="btn-ember btn-ember--lg" data-magnetic=".3"><span data-roll>écrire un email</span></a></div>
+          </div>
+          <ul class="contact__list">
+            <li data-reveal><span class="mono">email</span><button type="button" class="copy" data-copy="thiawkouthieye@gmail.com"><span>thiawkouthieye@gmail.com</span><span class="copy__hint mono">copier</span></button></li>
+            <li data-reveal><span class="mono">téléphone</span><a href="tel:+33745355813">+33 7 45 35 58 13</a></li>
+            <li data-reveal><span class="mono">ville</span><span>Bordeaux, France · <span class="clock mono">--:--:--</span></span></li>
+            <li data-reveal><span class="mono">mobilité</span><span>Toute la France</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__word" aria-hidden="true">(k)thiaw</div>
+    <div class="wrap footer__row">
+      <span>© 2026 Kouthieye Thiaw</span>
+      <span class="footer__mid">Électronique, rigueur et innovation.</span>
+      <a href="#top" data-roll>retour en haut ↑</a>
+    </div>
+  </footer>
+
+  <!-- Étude de cas (fenêtre projet) -->
+  <div class="case" id="case" role="dialog" aria-modal="true" aria-labelledby="case-title" hidden>
+    <div class="case__scroll" data-lenis-prevent>
+      <div class="case__bar">
+        <span class="mono case__count">01 / 12</span>
+        <div class="case__nav">
+          <button type="button" class="circ circ--line" data-case-prev aria-label="Projet précédent"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8h-11M7 3.5 2.5 8 7 12.5"/></svg></button>
+          <button type="button" class="circ circ--line" data-case-next aria-label="Projet suivant"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></button>
+          <button type="button" class="pill pill--close" data-case-close>
+            <span class="pill__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></span>
+            <span data-roll>fermer</span>
+          </button>
+        </div>
+      </div>
+      <div class="case__content"></div>
+    </div>
+  </div>
+
+  <!-- Visionneuse -->
+  <div class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Visionneuse d’images">
+    <img class="lightbox__img" alt="">
+    <div class="lightbox__ui">
+      <span class="mono lightbox__count">1 / 1</span>
+      <div>
+        <button type="button" class="circ circ--light" data-lb-prev aria-label="Image précédente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8h-11M7 3.5 2.5 8 7 12.5"/></svg></button>
+        <button type="button" class="circ circ--light" data-lb-next aria-label="Image suivante"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></button>
+        <button type="button" class="circ circ--light" data-lb-close aria-label="Fermer la visionneuse"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/pcb.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

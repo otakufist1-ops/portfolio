@@ -4,27 +4,32 @@ window.PROJECTS = [
   {
     id: 'exail', featured: true, cat: 'elec',
     title: 'Stage — Exail Quantum Systems',
-    short: 'Alimentation bas bruit ±6 V / ±18 V et synthétiseur de fréquence AOM à base de DDS.',
-    year: '2026', frame: 'Stage · Gradignan', duration: 'Avril – juin 2026', role: 'Stagiaire en électronique',
+    short: 'Sept alimentations bas bruit « Bornus » produites et un synthétiseur de fréquence AOM à base de DDS intégré, testé et livré.',
+    year: '2026', frame: 'Stage · Exail, Gradignan', duration: '7 avril – 12 juin 2026 · 10 semaines', role: 'Stagiaire en intégration électronique',
     cover: 'exail-1', alt: 'Baie électronique Exail réalisée pendant le stage',
-    images: ['exail-1', 'exail-9', 'exail-12', 'exail-11', 'exail-2', 'exail-3', 'exail-4', 'exail-5', 'exail-6', 'exail-7', 'exail-8', 'exail-10'],
+    images: ['exail-1', 'exail-9', 'exail-12', 'exail-11', 'exail-2', 'exail-3', 'exail-4', 'exail-5', 'exail-6', 'exail-7', 'exail-8', 'exail-10', 'attestation-exail'],
     figures: [
-      { v: 230, u: 'V', l: 'entrée secteur des bancs de test' },
+      { v: 7, u: '', l: 'alimentations Bornus produites et validées' },
+      { v: 18, p: '±', u: 'V', l: 'et ±6 V bas bruit, depuis le secteur 230 V' },
       { v: 4, u: '', l: 'sorties RF du synthétiseur AOM' },
-      { v: 18, p: '±', u: 'V', l: 'rails d’alimentation bas bruit' },
-      { v: 6, p: '±', u: 'V', l: 'rails d’alimentation bas bruit' }
+      { v: 110, u: 'MHz', l: 'mesurés à −5,9 dBm à l’analyseur de spectre' }
     ],
-    context: 'Chez Exail Quantum Systems, j’ai intégré des systèmes de bancs de tests à partir d’une prise secteur 230 V, destinés à alimenter et piloter des systèmes optiques de précision.',
+    context: 'Dix semaines au pôle production d’Exail Quantum Systems, à Gradignan, qui conçoit des gravimètres quantiques à atomes froids. Les lasers de ces instruments exigent des alimentations très bien filtrées et des sources RF précises : j’ai intégré, testé et livré deux systèmes destinés aux bancs de test internes.',
     missions: [
-      'Concevoir une alimentation bas bruit délivrant ±6 V et ±18 V pour des systèmes optiques',
-      'Réaliser un synthétiseur de fréquence AOM basé sur une DDS, piloté par une Raspberry Pi',
-      'Intégrer le synthétiseur dans son boîtier : horloge DDS et 4 sorties RF en SMA (AOM0, AOM1, Cooler, Repumper), entrée de commande, pilotage réseau en Telnet, alimentation +6 V',
-      'Assembler mécaniquement un régénérateur laser (RLS)',
-      'Câbler, vérifier et livrer des baies conformes à la production'
+      'Produire sept alimentations « Bornus » : filtre CEM et interrupteur secteur, alimentation à découpage Vox Power 600 W réglée à +18, −18, +6 et −6 V, carte filtre en π (CLC) pour le bas bruit',
+      'Dimensionner la protection et le refroidissement : fusible 4 A (600 W / 230 V ≈ 2,6 A) et ventilateur 47 m³/h, soit un échauffement de l’air d’environ 3,8 °C',
+      'Assembler la mécanique d’après le plan 3D (eDrawings) : frein-filet, serrage au couple, câblage d’après le plan Excel et câble management',
+      'Vérifier chaque tension au multimètre selon la procédure, puis apposer l’étiquette de validation et la traçabilité (version, trigramme KTH, date)',
+      'Intégrer le synthétiseur de fréquence AOM : carte séquenceur DDS (DAC 10 bits) pilotée en SPI par une Raspberry Pi 3B+, carte quartz 100 MHz, carte de distribution +6 V protégée par diodes Schottky',
+      'Tester le synthétiseur : consommation (< 0,6 A), communication réseau en Telnet, puissance des 4 sorties RF (AOM0, AOM1, Cooler, Repumper) à l’analyseur de spectre, GPIO',
+      'Assembler la mécanique et l’alimentation d’une RLS, l’un des systèmes laser d’Exail'
     ],
-    skills: ['Lecture de schémas 3D', 'Câble management', 'RF', 'Électronique de précision', 'Vie en entreprise'],
-    tools: ['DDS', 'AOM', 'Raspberry Pi', 'Connecteurs SMA', 'Telnet', 'Multimètre', 'Alimentations de laboratoire'],
-    docs: []
+    skills: ['Intégration électronique', 'Lecture de plans 3D', 'Câble management', 'Procédures de test', 'RF', 'Traçabilité', 'Rigueur en production'],
+    tools: ['DDS', 'Raspberry Pi', 'SPI', 'Telnet', 'Analyseur de spectre', 'Multimètre', 'eDrawings', 'Clé dynamométrique'],
+    docs: [
+      { label: 'Rapport de stage (PDF)', href: 'assets/pdf/rapport-stage-exail.pdf' },
+      { label: 'Attestation de fin de stage', href: 'assets/pdf/attestation-stage-exail.pdf' }
+    ]
   },
   {
     id: 'sql', featured: false, cat: 'data', isNew: true,

@@ -7,7 +7,7 @@ window.PROJECTS = [
     short: 'Sept alimentations bas bruit « Bornus » produites et un synthétiseur de fréquence AOM à base de DDS intégré, testé et livré.',
     year: '2026', frame: 'Stage · Exail, Gradignan', duration: '7 avril – 12 juin 2026 · 10 semaines', role: 'Stagiaire en intégration électronique',
     cover: 'exail-1', alt: 'Baie électronique Exail réalisée pendant le stage',
-    images: ['exail-1', 'exail-9', 'exail-12', 'exail-11', 'exail-2', 'exail-3', 'exail-4', 'exail-5', 'exail-6', 'exail-7', 'exail-8', 'exail-10', 'attestation-exail'],
+    images: ['exail-1', 'exail-13', 'exail-14', 'exail-5', 'exail-4', 'exail-15', 'exail-16', 'exail-7', 'exail-17', 'exail-3', 'exail-18', 'exail-19', 'exail-20', 'exail-21', 'exail-22', 'exail-9', 'exail-12', 'exail-11', 'exail-10', 'exail-2', 'exail-6', 'exail-8', 'attestation-exail'],
     figures: [
       { v: 7, u: '', l: 'alimentations Bornus produites et validées' },
       { v: 18, p: '±', u: 'V', l: 'et ±6 V bas bruit, depuis le secteur 230 V' },
@@ -20,7 +20,7 @@ window.PROJECTS = [
       'Dimensionner la protection et le refroidissement : fusible 4 A (600 W / 230 V ≈ 2,6 A) et ventilateur 47 m³/h, soit un échauffement de l’air d’environ 3,8 °C',
       'Assembler la mécanique d’après le plan 3D (eDrawings) : frein-filet, serrage au couple, câblage d’après le plan Excel et câble management',
       'Vérifier chaque tension au multimètre selon la procédure, puis apposer l’étiquette de validation et la traçabilité (version, trigramme KTH, date)',
-      'Intégrer le synthétiseur de fréquence AOM : carte séquenceur DDS (DAC 10 bits) pilotée en SPI par une Raspberry Pi 3B+, carte quartz 100 MHz, carte de distribution +6 V protégée par diodes Schottky',
+      'Intégrer le synthétiseur de fréquence AOM : carte séquenceur à DDS AD9959 (DAC 10 bits) pilotée en SPI par une Raspberry Pi 3B+, carte quartz 100 MHz, carte de distribution +6 V protégée par diodes Schottky',
       'Tester le synthétiseur : consommation (< 0,6 A), communication réseau en Telnet, puissance des 4 sorties RF (AOM0, AOM1, Cooler, Repumper) à l’analyseur de spectre, GPIO',
       'Assembler la mécanique et l’alimentation d’une RLS, l’un des systèmes laser d’Exail'
     ],
@@ -78,6 +78,33 @@ window.PROJECTS = [
     ],
     skills: ['Construction mécanique', 'Abaque de Smith', 'Adaptation d’impédance', 'Radiogoniométrie'],
     tools: ['VNA', 'SDR', 'GNU Radio'],
+    docs: []
+  },
+  {
+    id: 'modulation', featured: true, cat: 'rf',
+    title: 'Modulation d’amplitude — du GBF au spectre',
+    short: 'Moduler une porteuse, lire son enveloppe à l’oscilloscope puis ses raies latérales en FFT.',
+    year: '2026', frame: 'TP · IUT de Bordeaux', duration: 'Mars 2026', role: 'Travaux pratiques',
+    cover: 'mod-1', alt: 'Oscilloscope Keysight : signal modulant en vert et signal modulé en amplitude en jaune',
+    images: ['mod-1', 'mod-2'],
+    videos: [
+      { src: 'assets/video/mod-banc.mp4', poster: 'assets/video/mod-banc-poster.webp', step: '01', tag: 'banc', label: 'Le banc : GBF, alimentations et oscilloscope' },
+      { src: 'assets/video/mod-fft.mp4', poster: 'assets/video/mod-fft-poster.webp', step: '02', tag: 'FFT', label: 'Le spectre : porteuse et raies latérales' }
+    ],
+    videosNote: 'Filmé en TP le 6 mars 2026 : réglage des signaux au GBF, puis lecture du spectre en FFT, où les raies latérales s’écartent de la porteuse quand la fréquence du signal modulant augmente.',
+    figures: [
+      { v: 3, u: '', l: 'raies dans le spectre : la porteuse et ses deux bandes latérales' }
+    ],
+    context: 'En TP, j’ai réalisé et caractérisé une modulation d’amplitude : un signal modulant basse fréquence fait varier l’amplitude d’une porteuse. Le but est de relier ce que l’on voit dans le domaine temporel, l’enveloppe, à ce que l’on mesure dans le domaine fréquentiel, la porteuse entourée de ses raies latérales.',
+    missions: [
+      'Générer la porteuse et le signal modulant au générateur de fonctions (GBF)',
+      'Câbler le modulateur sur plaque d’essai, alimenté par les alimentations de laboratoire',
+      'Afficher à l’oscilloscope le signal modulant et le signal modulé : l’enveloppe reproduit le message',
+      'Mesurer l’enveloppe aux curseurs pour évaluer le taux de modulation',
+      'Passer en FFT sur l’oscilloscope : repérer la porteuse et les raies latérales à fc ± fm, puis suivre leur écart quand fm varie'
+    ],
+    skills: ['Modulation d’amplitude', 'Analyse spectrale (FFT)', 'Mesure à l’oscilloscope', 'Montage sur plaque d’essai'],
+    tools: ['Oscilloscope Keysight DSOX1202A', 'GBF', 'Alimentations de laboratoire', 'Multimètre'],
     docs: []
   },
   {

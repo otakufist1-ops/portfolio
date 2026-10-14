@@ -1230,16 +1230,19 @@
     return () => ios.forEach(io => io.disconnect());
   }
 
+  // blocs vidéo de la page : chaque conteneur [data-reels] reprend les vidéos d'un projet
   function fabrication() {
-    const box = $('.fab__reels'), carte = byId.carte;
-    if (!box || !carte || !carte.videos) return;
-    box.innerHTML = carte.videos.map(reelHTML).join('');
-    initReels(box);
-    if (!ANIM) return;
-    const reels = $$('.reel', box);
-    gsap.from(reels, { yPercent: 14, opacity: 0, duration: 1.4, ease: 'expo.out', stagger: 0.12, scrollTrigger: { trigger: box, start: 'top 85%' } });
-    gsap.matchMedia().add('(min-width: 901px)', () => {
-      gsap.fromTo(reels[1], { y: 60 }, { y: -60, ease: 'none', scrollTrigger: { trigger: box, start: 'top bottom', end: 'bottom top', scrub: true } });
+    $$('[data-reels]').forEach(box => {
+      const p = byId[box.dataset.reels];
+      if (!p || !p.videos) return;
+      box.innerHTML = p.videos.map(reelHTML).join('');
+      initReels(box);
+      if (!ANIM) return;
+      const reels = $$('.reel', box);
+      gsap.from(reels, { yPercent: 14, opacity: 0, duration: 1.4, ease: 'expo.out', stagger: 0.12, scrollTrigger: { trigger: box, start: 'top 85%' } });
+      gsap.matchMedia().add('(min-width: 901px)', () => {
+        gsap.fromTo(reels[1], { y: 60 }, { y: -60, ease: 'none', scrollTrigger: { trigger: box, start: 'top bottom', end: 'bottom top', scrub: true } });
+      });
     });
   }
 

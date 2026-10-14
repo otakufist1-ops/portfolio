@@ -1,8 +1,10 @@
 /* =========================================================
    Kouthieye Thiaw — Portfolio GEII · interactions & animations
    GSAP + ScrollTrigger + Lenis (chargés depuis un CDN).
-   Sans eux (ou avec « réduire les animations »), le site reste
-   entièrement lisible : seules les animations sont désactivées.
+   Sans eux, le site reste entièrement lisible. Avec « réduire les
+   animations » (réglage fréquent sous Windows), les animations restent
+   actives mais plus calmes : ni défilement à inertie, ni parallaxe,
+   ni bandeaux défilant en continu.
    ========================================================= */
 (() => {
   'use strict';
@@ -10,10 +12,10 @@
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
   const root = document.documentElement;
-  const REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const FINE = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const HAS_GSAP = !!(window.gsap && window.ScrollTrigger);
-  const ANIM = HAS_GSAP && !REDUCE;
+  const ANIM = HAS_GSAP;
+  const CALM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const P = window.PROJECTS || [];
   const CATS = window.PROJECT_CATS || {};
@@ -113,7 +115,7 @@
 
   /* ---------- Défilement fluide ---------- */
   let lenis = null;
-  if (ANIM && window.Lenis) {
+  if (ANIM && !CALM && window.Lenis) {
     lenis = new Lenis({ lerp: 0.085, wheelMultiplier: 0.95, touchMultiplier: 1.4 });
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(t => lenis.raf(t * 1000));
@@ -123,13 +125,13 @@
   function goTo(target) {
     if (target === 0) {
       if (lenis) lenis.scrollTo(0, { duration: 1.6, easing: t => 1 - Math.pow(1 - t, 4) });
-      else scrollTo({ top: 0, behavior: REDUCE ? 'auto' : 'smooth' });
+      else scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
     const el = typeof target === 'string' ? $(target) : target;
     if (!el) return;
     if (lenis) lenis.scrollTo(el, { duration: 1.6, easing: t => 1 - Math.pow(1 - t, 4) });
-    else el.scrollIntoView({ behavior: REDUCE ? 'auto' : 'smooth' });
+    else el.scrollIntoView({ behavior: 'smooth' });
   }
 
   /* ---------- Ouverture : un oscilloscope qui se met sous tension, puis l'écran s'ouvre ---------- */
@@ -252,8 +254,8 @@
     lenis && lenis.stop();
     document.body.style.overflow = 'hidden';
     if (HAS_GSAP) {
-      gsap.fromTo(menu, { clipPath: 'inset(0% 0% 100% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: REDUCE ? 0 : 0.85, ease: 'expo.inOut' });
-      if (!REDUCE) gsap.from($$('a, .menu__foot', menu), { yPercent: 60, opacity: 0, stagger: 0.05, duration: 1, ease: 'expo.out', delay: 0.3 });
+      gsap.fromTo(menu, { clipPath: 'inset(0% 0% 100% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.85, ease: 'expo.inOut' });
+      gsap.from($$('a, .menu__foot', menu), { yPercent: 60, opacity: 0, stagger: 0.05, duration: 1, ease: 'expo.out', delay: 0.3 });
     } else menu.style.clipPath = 'none';
   }
 
@@ -265,7 +267,7 @@
     document.body.style.overflow = '';
     lenis && lenis.start();
     const done = () => { menu.hidden = true; };
-    if (HAS_GSAP) gsap.to(menu, { clipPath: 'inset(0% 0% 100% 0%)', duration: REDUCE ? 0 : 0.7, ease: 'expo.inOut', onComplete: done });
+    if (HAS_GSAP) gsap.to(menu, { clipPath: 'inset(0% 0% 100% 0%)', duration: 0.7, ease: 'expo.inOut', onComplete: done });
     else done();
   }
 
@@ -324,7 +326,7 @@
 
   /* ---------- Curseur : un point qui s'agrandit sur les liens, une pastille sur les médias ---------- */
   function cursor() {
-    if (!FINE || REDUCE || !HAS_GSAP) return;
+    if (!FINE || !HAS_GSAP) return;
     root.classList.add('has-cursor', 'c-hidden');
     const dot = $('.c-dot'), lab = $('.c-label'), labTxt = $('.c-label span');
     let mx = innerWidth / 2, my = innerHeight / 2, dx = mx, dy = my, lx = mx, ly = my;
@@ -435,7 +437,7 @@
       gsap.fromTo(fig, { clipPath: 'inset(100% 0% 0% 0% round 20px)' }, { clipPath: 'inset(0% 0% 0% 0% round 20px)', duration: 1.6, ease: 'expo.inOut', scrollTrigger: { trigger: fig, start: 'top 80%' } });
       gsap.from($('img', fig), { scale: 1.4, duration: 2, ease: 'expo.out', scrollTrigger: { trigger: fig, start: 'top 80%' } });
     });
-    $$('[data-parallax]').forEach(el => {
+    if (!CALM) $$('[data-parallax]').forEach(el => {
       gsap.fromTo(el, { yPercent: -7 }, { yPercent: 7, ease: 'none', scrollTrigger: { trigger: el.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } });
     });
 
@@ -478,6 +480,7 @@
 
   /* ---------- Bandeaux défilants (vitesse liée au scroll) ---------- */
   function marquees() {
+    if (CALM) return;
     $$('.marquee').forEach((m, idx) => {
       const track = $('.marquee__track', m);
       track.innerHTML += track.innerHTML;
@@ -544,7 +547,6 @@
       freqEl.textContent = `f = ${(144 + (fx - 0.5) * 60).toFixed(3)} MHz`;
       ampEl.textContent = (0.5 + (1 - fy) * 1.5).toFixed(2);
     };
-    if (REDUCE) { draw(); return; }
     tick(draw);
   }
 
@@ -676,7 +678,7 @@
           }
         }
       });
-      cards.forEach(c => {
+      if (!CALM) cards.forEach(c => {
         gsap.fromTo($('.pcard__par', c), { xPercent: 7 }, { xPercent: -7, ease: 'none', scrollTrigger: { trigger: c, containerAnimation: tween, start: 'left right', end: 'right left', scrub: true } });
         gsap.fromTo($('.pcard__num', c), { xPercent: -40 }, { xPercent: 40, ease: 'none', scrollTrigger: { trigger: c, containerAnimation: tween, start: 'left right', end: 'right left', scrub: true } });
       });
@@ -703,7 +705,7 @@
       if (HAS_GSAP) setTimeout(() => ScrollTrigger.refresh(), 800);
     });
 
-    if (!FINE || !HAS_GSAP || REDUCE) return;
+    if (!FINE || !HAS_GSAP) return;
     const prev = $('.hover-preview'), inner = $('.hover-preview__inner'), imgs = {};
     let loaded = false, mx = 0, my = 0, px = 0, py = 0, active = null;
     const st = { s: 0.6, o: 0 };
@@ -789,18 +791,17 @@
           line.innerHTML = `<span class="pr">${esc(a)}</span><span class="cmd"></span>`;
           const cmd = line.lastChild;
           line.appendChild(caret);
-          if (REDUCE) cmd.textContent = b;
-          else for (const ch of b) {
+          for (const ch of b) {
             if (id !== run) return;
             cmd.textContent += ch;
             await sleep(12 + Math.random() * 34);
           }
           cmd.innerHTML = kw(b);
-          await sleep(REDUCE ? 0 : 240);
+          await sleep(240);
         } else {
           line.textContent = a;
           if (b === 'hl') line.classList.add('hl');
-          await sleep(REDUCE ? 0 : 40);
+          await sleep(40);
         }
         body.scrollTop = body.scrollHeight;
       }
@@ -914,7 +915,7 @@
     const onScroll = () => {
       const y = caseScroll.scrollTop;
       caseBar.classList.toggle('is-stuck', y > 8);
-      if (ANIM && !par.parentElement.classList.contains('case__cover--svg')) par.style.transform = `translate3d(0,${(y * 0.16).toFixed(1)}px,0)`;
+      if (ANIM && !CALM && !par.parentElement.classList.contains('case__cover--svg')) par.style.transform = `translate3d(0,${(y * 0.16).toFixed(1)}px,0)`;
     };
     caseScroll.addEventListener('scroll', onScroll, { passive: true });
     caseCleanup.push(() => caseScroll.removeEventListener('scroll', onScroll));
@@ -1073,7 +1074,6 @@
   /* ---------- Univers : illustrations animées seulement quand elles sont visibles ---------- */
   function univers() {
     const svgs = $$('.acc .ill');
-    if (REDUCE) { svgs.forEach(s => s.pauseAnimations && s.pauseAnimations()); return; }
     const io = new IntersectionObserver(es => es.forEach(e => {
       if (!e.target.pauseAnimations) return;
       e.isIntersecting ? e.target.unpauseAnimations() : e.target.pauseAnimations();
@@ -1143,7 +1143,6 @@
       fEl.textContent = `${(143.5 + centre).toFixed(3)} MHz`;
     };
     new ResizeObserver(resize).observe(fall);
-    if (REDUCE) return;
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(fall);
     tick(() => {
       if (!visible || document.hidden || !W) return;
@@ -1180,7 +1179,7 @@
     items.forEach(it => {
       const frame = $(frameSel, it), inner = $(innerSel, it);
       gsap.fromTo(frame, { clipPath: 'inset(100% 0% 0% 0% round 14px)' }, { clipPath: 'inset(0% 0% 0% 0% round 14px)', duration: 1.4, ease: 'power4.inOut', scrollTrigger: { trigger: it, start: 'top 88%' } });
-      gsap.fromTo(inner, { yPercent: -5 }, { yPercent: 5, ease: 'none', scrollTrigger: { trigger: it, start: 'top bottom', end: 'bottom top', scrub: true } });
+      if (!CALM) gsap.fromTo(inner, { yPercent: -5 }, { yPercent: 5, ease: 'none', scrollTrigger: { trigger: it, start: 'top bottom', end: 'bottom top', scrub: true } });
     });
   }
 
@@ -1195,7 +1194,7 @@
     gsap.matchMedia().add('(min-width: 901px)', () => {
       items.forEach((it, k) => {
         const sp = [0, 70, -30, 50, -20][k] || 0;
-        if (sp) gsap.fromTo(it, { y: sp }, { y: -sp, ease: 'none', scrollTrigger: { trigger: it, start: 'top bottom', end: 'bottom top', scrub: true } });
+        if (sp && !CALM) gsap.fromTo(it, { y: sp }, { y: -sp, ease: 'none', scrollTrigger: { trigger: it, start: 'top bottom', end: 'bottom top', scrub: true } });
       });
     });
   }
@@ -1221,7 +1220,7 @@
       v.addEventListener('pause', sync);
       v.addEventListener('timeupdate', () => { if (v.duration) bar.style.transform = `scaleX(${(v.currentTime / v.duration).toFixed(3)})`; });
       const io = new IntersectionObserver(([e]) => {
-        if (e.isIntersecting && !REDUCE && !fig.dataset.paused) playV(v);
+        if (e.isIntersecting && !fig.dataset.paused) playV(v);
         else if (!e.isIntersecting) v.pause();
       }, { threshold: 0.4 });
       io.observe(fig);
@@ -1241,7 +1240,7 @@
       const reels = $$('.reel', box);
       gsap.from(reels, { yPercent: 14, opacity: 0, duration: 1.4, ease: 'expo.out', stagger: 0.12, scrollTrigger: { trigger: box, start: 'top 85%' } });
       gsap.matchMedia().add('(min-width: 901px)', () => {
-        gsap.fromTo(reels[1], { y: 60 }, { y: -60, ease: 'none', scrollTrigger: { trigger: box, start: 'top bottom', end: 'bottom top', scrub: true } });
+        if (!CALM) gsap.fromTo(reels[1], { y: 60 }, { y: -60, ease: 'none', scrollTrigger: { trigger: box, start: 'top bottom', end: 'bottom top', scrub: true } });
       });
     });
   }
@@ -1251,7 +1250,7 @@
     const wrap = $('.film'), v = $('.film__video');
     if (!wrap || !v) return;
     const state = $('.film__state'), sound = $('.film__sound'), bar = $('.film__bar span');
-    let userPaused = REDUCE, inView = false;
+    let userPaused = false, inView = false;
     const sync = () => {
       const playing = !v.paused;
       wrap.classList.toggle('is-playing', playing);
@@ -1282,7 +1281,7 @@
       stage.classList.add('is-bleed');
       const tl = gsap.timeline({ scrollTrigger: { trigger: stage, start: 'top 92%', end: 'top 8%', scrub: 0.6, invalidateOnRefresh: true } });
       tl.fromTo(wrap, { clipPath: () => `inset(7% ${side()}px 7% ${side()}px round 20px)` }, { clipPath: 'inset(0% 0px 0% 0px round 0px)', ease: 'none' }, 0)
-        .fromTo(v, { scale: 1.18 }, { scale: 1, ease: 'none' }, 0);
+        .fromTo(v, { scale: CALM ? 1 : 1.18 }, { scale: 1, ease: 'none' }, 0);
       return () => stage.classList.remove('is-bleed');
     });
   }
@@ -1340,7 +1339,7 @@
   function proximity() {
     const big = $('.contact__big');
     const chars = $$('.contact__line', big).flatMap(splitChars);
-    if (!FINE || REDUCE) return;
+    if (!FINE) return;
     let mx = -9999, my = -9999, visible = false;
     const cur = chars.map(() => 450);
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(big);

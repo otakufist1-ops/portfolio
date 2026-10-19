@@ -1193,7 +1193,7 @@
     // profondeur : chaque photo défile à sa propre vitesse (grand écran)
     gsap.matchMedia().add('(min-width: 901px)', () => {
       items.forEach((it, k) => {
-        const sp = [0, 70, -30, 50, -20][k] || 0;
+        const sp = [0, 0, 70, -30, 50, -20][k] || 0;
         if (sp && !CALM) gsap.fromTo(it, { y: sp }, { y: -sp, ease: 'none', scrollTrigger: { trigger: it, start: 'top bottom', end: 'bottom top', scrub: true } });
       });
     });

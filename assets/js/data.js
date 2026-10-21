@@ -199,6 +199,34 @@ window.PROJECTS = [
     ]
   },
   {
+    id: 'banc', featured: true, cat: 'auto',
+    title: 'Banc de mesure automatisé sous Python',
+    short: 'Piloter un générateur et un multimètre en Python pour tracer seul la caractéristique I = f(U) d’une diode.',
+    year: '2026', frame: 'BUT 2 · S3 · informatique de spécialité', duration: 'Janvier 2026 · 3 séances', role: 'Binôme avec Louison Prevost-Bonnefille',
+    cover: 'banc-1', alt: 'Banc de mesure : générateur Siglent, multimètre Keysight et montage de la diode sur sa platine',
+    images: ['banc-1', 'banc-2', 'banc-6', 'banc-5', 'banc-3', 'banc-4'],
+    figures: [
+      { v: 20, u: '', l: 'points de mesure de 0 à 1 V, sans intervention manuelle' },
+      { v: 0.6, d: 1, u: 'V', l: 'tension de seuil relevée sur la diode au silicium' },
+      { v: 470, u: 'Ω', l: 'résistance de protection en série avec la diode' }
+    ],
+    context: 'En informatique de spécialité, nous avons automatisé un banc de mesure : un script Python pilote par USB un générateur Siglent SDG1032X et un multimètre Keysight 34460A, puis relève et trace la caractéristique courant-tension d’une diode. Deux marques d’appareils, un seul programme.',
+    missions: [
+      'Identifier les instruments et lire leurs datasheets pour connaître leurs commandes',
+      'Vérifier la liaison USB et l’IDN de chaque appareil avec Keysight Interactive IO',
+      'Lister les ressources VISA en Python avec pyvisa (ResourceManager, list_resources)',
+      'Câbler le montage : diode et résistance de 470 Ω, multimètre en ampèremètre puis en voltmètre, générateur en tension continue (DC offset)',
+      'Valider la communication par une mesure ponctuelle en SCPI (MEAS:VOLT:DC?, MEAS:CURR:DC?)',
+      'Automatiser un balayage de 0 à 1 V en 20 points, puis tracer I = f(U) avec numpy et matplotlib',
+      'Analyser la courbe : courant quasi nul jusqu’à 0,6 V, puis croissance exponentielle ; corriger la polarité du courant mesuré'
+    ],
+    skills: ['Automatisation de mesures', 'Commandes SCPI', 'Python', 'Instrumentation', 'Caractérisation de composants'],
+    tools: ['Python', 'pyvisa', 'numpy', 'matplotlib', 'VS Code', 'Keysight Interactive IO', 'Multimètre Keysight 34460A', 'GBF Siglent SDG1032X'],
+    docs: [
+      { label: 'Compte rendu (PDF)', href: 'assets/pdf/compte-rendu-banc-python.pdf' }
+    ]
+  },
+  {
     id: 'sumo', featured: true, cat: 'embed',
     title: 'Robot Sumo autonome',
     short: 'Concevoir de zéro un robot de combat à partir d’un cahier des charges.',

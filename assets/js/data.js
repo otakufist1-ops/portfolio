@@ -199,6 +199,62 @@ window.PROJECTS = [
     ]
   },
   {
+    id: 'identif', featured: true, cat: 'auto',
+    title: 'Identification de systèmes — thermique et moteur CC',
+    short: 'Passer du système réel à son modèle : un système thermique et un moteur à courant continu identifiés au premier ordre.',
+    year: '2025', frame: 'BUT 2 · S3 · automatique, TP1 et TP2', duration: 'Décembre 2025', role: 'Binôme avec Joris Coppi',
+    cover: 'identif-1', alt: 'Banc du moteur à courant continu : moteur, génératrice tachymétrique et carte de commande',
+    images: ['identif-1', 'identif-2', 'identif-3', 'identif-4', 'identif-5', 'identif-6', 'identif-7'],
+    figures: [
+      { v: 132.1, d: 1, u: 's', l: 'constante de temps du système thermique (K = 0,54)' },
+      { v: 29.2, d: 1, u: 'ms', l: 'constante de temps du moteur CC, par la réponse indicielle' },
+      { v: 3, u: 'Hz', l: 'fréquence de coupure du moteur relevée au diagramme de Bode' }
+    ],
+    context: 'Deux TP pour passer du système physique à son modèle mathématique : un système thermique piloté par Arduino, puis un moteur à courant continu identifié en « boîte noire ». Dans les deux cas, un premier ordre H(p) = K / (1 + τp), dont on extrait K et τ par la mesure, avant de dimensionner une commande.',
+    missions: [
+      'Relever la réponse indicielle du système thermique sur l’interface Arduino, puis calculer K = 0,54 et τ = 132,1 s par la méthode des 63 %',
+      'Tracer son diagramme de Bode sous Matlab et établir son schéma bloc',
+      'Commander en boucle ouverte (consigne 40 °C), puis observer l’effet d’une perturbation au ventilateur',
+      'Passer en boucle fermée en ajoutant le calcul de l’erreur dans le programme : la perturbation est compensée',
+      'Identifier le moteur CC par un échelon de rapport cyclique de 20 % à 40 % : cinq acquisitions moyennées sous Matlab, modèle validé avec lsim (K = 10,44 ; τ = 29,2 ms)',
+      'L’identifier aussi en fréquentiel, de 0,2 à 33,7 Hz : gain ≈ 32,5 dB, coupure ≈ 3 Hz, τ ≈ 53 ms',
+      'Expliquer l’écart entre les deux méthodes par les frottements secs, et retenir le modèle temporel pour l’asservissement'
+    ],
+    skills: ['Identification de systèmes', 'Réponse indicielle', 'Diagramme de Bode', 'Boucle ouverte et fermée', 'Transformée de Laplace'],
+    tools: ['Matlab', 'Arduino', 'Génératrice tachymétrique', 'Schémas blocs'],
+    docs: [
+      { label: 'Compte rendu S3 (PDF)', href: 'assets/pdf/cr-automatique-s3.pdf' }
+    ]
+  },
+  {
+    id: 'regul', featured: true, cat: 'auto',
+    title: 'Régulation P et PI — moteur sur STM32 et système thermique',
+    short: 'Dimensionner un correcteur sous Matlab, le coder en C sur STM32 et annuler l’erreur statique grâce à l’action intégrale.',
+    year: '2026', frame: 'BUT 2 · S4 · automatique, TP1 et TP2', duration: 'Février 2026', role: 'Binôme avec Joris Coppi',
+    cover: 'regul-3', coverFit: 'contain', alt: 'Relevé de vitesse du moteur et de sa commande sur l’interface de la carte STM32',
+    images: ['regul-3', 'regul-2', 'regul-4', 'regul-5', 'regul-6', 'regul-1', 'regul-7', 'regul-8', 'regul-9', 'regul-10', 'regul-11'],
+    figures: [
+      { v: 270, u: 'pas', l: 'erreur statique avec un simple correcteur P (C0 = 0,2), annulée par le PI' },
+      { v: 80, u: '°', l: 'marge de phase imposée au PI du moteur, à 90 rad/s' },
+      { v: 3, u: '', l: 'correcteurs PI calculés et testés sur le système thermique' }
+    ],
+    context: 'Suite de l’identification : le moteur, modélisé par H(p) = 32 / (1 + 0,02p), doit suivre une consigne de vitesse, et c’est sa carte STM32 qui calcule la commande PWM. Un second TP compare correcteurs P et PI sur le système thermique, de la théorie à l’essai réel.',
+    missions: [
+      'Établir la fonction de transfert en boucle fermée (théorème de Mason) et étudier l’effet du gain C0 sous Matlab',
+      'Montrer qu’un temps de montée de 1 µs exigerait C0 ≈ 1875 et saturerait le hacheur : objectif physiquement impossible',
+      'Avec C0 = 0,2, calculer puis mesurer l’erreur statique : environ 270 pas pour une consigne de 2000',
+      'Dimensionner un correcteur PI (ωc = 90 rad/s, marge de phase 80°) et le valider sur le diagramme de Nichols',
+      'Discrétiser le PI par Euler en une récurrence u(k) = u(k−1) + C0i(1 + Te/Ti)ε(k) − C0i·ε(k−1), puis la coder en C dans l’interruption périodique du STM32',
+      'Vérifier sur le banc que la vitesse tient la consigne et rejette un freinage, puis confirmer sous Simulink',
+      'Sur le système thermique : correcteur P (temps de réponse 28 s, erreur 1,7 °C), puis trois PI comparés selon la marge de phase (60° ou 30°) et ωu'
+    ],
+    skills: ['Correcteurs P et PI', 'Théorème de la valeur finale', 'Diagramme de Nichols', 'Discrétisation', 'Commande numérique'],
+    tools: ['Matlab', 'Simulink', 'STM32', 'Langage C', 'Arduino'],
+    docs: [
+      { label: 'Compte rendu S4 (PDF)', href: 'assets/pdf/cr-automatique-s4.pdf' }
+    ]
+  },
+  {
     id: 'banc', featured: true, cat: 'auto',
     title: 'Banc de mesure automatisé sous Python',
     short: 'Piloter un générateur et un multimètre en Python pour tracer seul la caractéristique I = f(U) d’une diode.',

@@ -826,7 +826,7 @@
 
   function caseHTML(p, i) {
     const n = P.length, next = P[(i + 1) % n];
-    const isSvg = /\.svg$/.test(p.cover);
+    const isSvg = /\.svg$/.test(p.cover) || p.coverFit === 'contain'; // schémas et courbes : affichés en entier
     const tags = arr => arr.map(t => `<span class="tag">${esc(t)}</span>`).join('');
     const figs = (p.figures || []).map(f => `
       <div class="fig" data-cr>

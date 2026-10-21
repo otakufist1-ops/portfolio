@@ -205,6 +205,10 @@ window.PROJECTS = [
     year: '2026', frame: 'BUT 2 · S3 · informatique de spécialité', duration: 'Janvier 2026 · 3 séances', role: 'Binôme avec Louison Prevost-Bonnefille',
     cover: 'banc-1', alt: 'Banc de mesure : générateur Siglent, multimètre Keysight et montage de la diode sur sa platine',
     images: ['banc-1', 'banc-2', 'banc-6', 'banc-5', 'banc-3', 'banc-4'],
+    videos: [
+      { src: 'assets/video/banc-balayage.mp4', poster: 'assets/video/banc-balayage-poster.webp', step: '06', tag: 'balayage', label: 'Le balayage en direct, accéléré ×2' }
+    ],
+    videosNote: 'Le script fait monter la tension du générateur pas à pas ; à chaque palier, le multimètre relève le courant. Quasi nul au départ, il grimpe brusquement une fois le seuil de la diode franchi.',
     figures: [
       { v: 20, u: '', l: 'points de mesure de 0 à 1 V, sans intervention manuelle' },
       { v: 0.6, d: 1, u: 'V', l: 'tension de seuil relevée sur la diode au silicium' },
